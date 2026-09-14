@@ -1,4 +1,4 @@
-name: Deploy JupyterLite
+name: Deploy Course Site
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
     paths:
       - jupyter_lite_config.json
       - jupyterlite/**
+      - modules/module_01.md
+      - package.json
+      - package-lock.json
       - .github/workflows/deploy-jupyterlite.yml
   workflow_dispatch:
 
@@ -33,6 +36,21 @@ jobs:
 
       - name: Build JupyterLite site
         run: jupyter lite build --output-dir _site/jupyterlite --contents jupyterlite
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install slide build tools
+        run: npm ci
+
+      - name: Build Module 1 slides
+        run: npx marp --html modules/module_01.md -o _site/modules/html/module_01.html
+
+      - name: Copy slide assets
+        run: |
+          mkdir -p _site/syllabus/2026
+          cp syllabus/2026/instructor-teon-photo.png syllabus/2026/instructor-tejiri-photo.png _site/syllabus/2026/
 
       - uses: actions/upload-pages-artifact@v3
         with:

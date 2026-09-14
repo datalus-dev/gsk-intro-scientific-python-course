@@ -67,7 +67,7 @@ Students will be asked to use Claude Code during the last session of class. Stud
 
 ### Course Materials
 
-The course materials can be found at [gsk-intro-scientific-python-course](https://github.com/teonbrooks/gsk-intro-scientific-python-course). We will be using the gapminder dataset and RNA-seq data in class, and will spend some time downloading the course materials using git. I would like you to create a new folder in your home directory called `workspace`. We will retrieve all the lecture notes, homework assignments, and updates to the course through this git repo.
+The course materials can be found at [gsk-intro-scientific-python-course](https://github.com/datalus-dev/gsk-intro-scientific-python-course). We will be using the gapminder dataset and RNA-seq data in class, and will spend some time downloading the course materials using git. I would like you to create a new folder in your home directory called `workspace`. We will retrieve all the lecture notes, homework assignments, and updates to the course through this git repo.
 
 ## Homework
 

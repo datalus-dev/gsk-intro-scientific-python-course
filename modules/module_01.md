@@ -1,5 +1,5 @@
 ---
-# title: Module 01: Introduction to Scientific Python
+title: Module 01: Introduction to Python and Git
 marp: true
 html: true
 theme: gaia
@@ -12,23 +12,61 @@ footer: Intro to Scientific Python
     h2 {
         text-align: center;
         }
+    pre {
+        position: relative;
+        margin: 0 0 8px 0;
+    }
+    .copy-btn {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        font-size: 12px;
+        padding: 2px 10px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        border-radius: 4px;
+    }
+    .copy-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('pre, marp-pre, [is="marp-pre"]').forEach((pre) => {
+        const btn = document.createElement('button');
+        btn.textContent = 'Copy';
+        btn.className = 'copy-btn';
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(pre.innerText.replace(/Copy$/, '')).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+            });
+        });
+        pre.appendChild(btn);
+    });
+});
+</script>
+
 <!--
-  NOTE: the JupyterLite consoles below point at the site's anticipated
-  GitHub Pages URL. Until that's deployed, build/serve `jupyterlite/`
-  locally and swap the `src` host for `http://localhost:8123` (or
-  wherever it's being served) when presenting.
+  NOTE: the JupyterLite consoles below point at the deployed GitHub
+  Pages site (https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/),
+  built and published automatically by .github/workflows/deploy-jupyterlite.yml
+  on every push to main. To test against a local build instead, run
+  `jupyter lite build --output-dir _build/jupyterlite --contents jupyterlite`,
+  serve it, and swap the `src` host accordingly.
 -->
-
-# Module 01: Introduction to Python
-
-September 14, 2026
-
----
 
 # <!-- fit -->Welcome to
 # <!-- fit -->Introduction to Scientific Python! :tada:
+
+---
+
+# Module 01: Introduction to Python and Git
+
+September 14, 2026
 
 ---
 <style scoped>section { font-size: 28px; }</style>
@@ -43,7 +81,7 @@ By the end of this class, you will be able to:
 
 - Launch and navigate a command-line interface
 - Clone a git repository and navigate the resulting directory
-- Use the interactive Python shell
+- Use the interactive Python shell (`ipython`)
 - Identify and use core Python data types (`str`, `int`, `float`, `list`, `dict`)
 - Call built-in functions and import libraries
 
@@ -55,9 +93,53 @@ By the end of this class, you will be able to:
 
 ## <!-- fit --> Instructor Introductions
 
-<b>Instructor</b>: [Teon Brooks, PhD](https://docs.google.com/presentation/d/1Tscpd6hqWgSDEuMd1yfW-2d29qHVwQj2boeY4P0XAaI/edit?slide=id.g37fbeac244c_0_0#slide=id.g37fbeac244c_0_0)
+---
+<style scoped>section { font-size: 22px; }</style>
 
-<b>TA</b>: Tejiri Agbamu
+<div style="display:flex; gap:24px; align-items:flex-start;">
+<div>
+
+## Teon Brooks, Ph.D
+
+**Academic Background**
+- Ph.D in Cognition and Perception @ New York University
+- Postdoc in Neuroinformatics @ Stanford University
+
+**Professional Background**
+- Data Scientist @ Mozilla (2017-2024)
+- Co-Founder @ Gotham Data Clinic (2019-Present)
+- Neural Data Scientist @ Meta FAIR (2025-Present)
+
+**Interests**
+- Running, biking, hiking, and tennis
+- Building software ([passports.social](https://passports.social))
+- [Traveling](https://passports.social/profile/teonbrooks.com/travel)
+
+Contact: [brookst3@mskcc.org](mailto:brookst3@mskcc.org)
+
+</div>
+<img src="../../syllabus/2026/instructor-teon-photo.png" style="width:32%; aspect-ratio:3/4; object-fit:cover; border-radius:8px; flex-shrink:0;">
+</div>
+
+---
+<style scoped>section { font-size: 22px; }</style>
+
+<div style="display:flex; gap:24px; align-items:flex-start;">
+<img src="../../syllabus/2026/instructor-tejiri-photo.png" style="width:32%; aspect-ratio:3/4; object-fit:cover; border-radius:8px; flex-shrink:0;">
+<div>
+
+## Your TA: Tejiri (Tay-JEE-Ree) Agbamu
+
+- 5th-year GSK student
+- PI: Jian Carrot-Zhang and Nikolaus Schultz (Department of Epidemiology & Biostatistics)
+- Research interests: Cancer genomics, computational pathology, and cancer disparities
+- Thesis work: Interplay of smoking exposure, clinical attributes, and genomics; Ancestral clinico-determinants of clinical response in breast cancer
+- Hobbies: reading, weightlifting, watching football/basketball, manic walking/biking
+- Favorite programming language: Python or R (depends on the day)
+- Contact me: [agbamut@mskcc.org](mailto:agbamut@mskcc.org) or Slack for the fastest response
+
+</div>
+</div>
 
 ---
 
@@ -81,12 +163,8 @@ By the end of this class, you will be able to:
 
 ## Anatomy of the Class
 
-- The class will largely be structured into two 45 minute halves
-- Each of the halves will be on a key programming area
-
-For each half, we will roughly have 30 minutes of lecture and some problems weaved throughout
-
-There will then be a 10 minute exercise following each section that we will focus on pair programming.
+- The first hour is lecture and active learning, woven together
+- The last 30 minutes is an in-class problem set, worked on in groups
 
 Programming is a team sport. Even at companies, if someone is writing, then someone is reviewing.
 
@@ -99,13 +177,14 @@ Programming is a team sport. Even at companies, if someone is writing, then some
 
 ## Course Structure
 
-- 10 sessions, 1:30pm - 3:00pm, plus a final project session
+- 10 sessions, 1:30pm - 3:00pm, including a final project session
 - Graded pass/fail: participation, weekly homework, final project
 - Teaching Fellows are in every session to help out
 
 ## Generative AI Policy
 
-The first four weeks (Modules 1-4) are foundational: git and core Python, **without** an agentic programming tool (Claude Code, Copilot, Cursor, etc). We'll dedicate a whole class to using one later, but you need the fundamentals first.
+The first three weeks (Modules 1-6) are foundational: git and core Python, **without** an agentic programming tool (Claude Code, Copilot, Cursor, etc). We'll dedicate a whole class to using one later, but working effectively with one requires
+that you first understand the fundamentals of programming.
 
 ---
 
@@ -131,13 +210,15 @@ A weekly assignment is given each Wednesday, due the following Monday.
 
 ## Why Git?
 
-`git` is a program that lets you save your work and manage different versions of it. It was made for collaboration, letting you contribute changes to a shared project.
+Git is a distributed version control software that lets you download, share, and collaborate on a project.
 
-We'll go into git in more depth across the first four modules. Today: just enough to get the course materials onto your machine.
+`git` is the command line tool that lets you save your work, manage different versions of it, and contribute it.
+
+We'll go into git in more depth across the first four modules. Today, we will use it to get the course materials onto your machine.
 
 ---
 
-## Cloning the Lecture Notes Repository
+## Cloning the Lecture Notes
 
 First, check whether you have git installed:
 
@@ -147,28 +228,41 @@ which git
 
 If that comes back empty, install git from [git-scm.com](https://git-scm.com/).
 
-Then, clone the course repository:
+A common task you will do with git is clone a repository. Cloning a repository creates a copy of the repository on your local device.
+
+---
+
+## Cloning the Lecture Notes, cont.
+
+First, let's create and move into our workspace folder for this class:
 
 ```bash
-git clone https://github.com/teonbrooks/gsk-intro-scientific-python-course.git
+mkdir ~/workspace
+cd ~/workspace
+```
+
+Now, let's clone our first repo:
+
+```bash
+git clone https://github.com/datalus-dev/gsk-intro-scientific-python-course.git
 ```
 
 ---
 
-## Navigating the Cloned Directory
+## Navigating the Cloned Repo
 
 ```bash
 cd gsk-intro-scientific-python-course
 ls
 ```
 
-This is now your local copy of the course materials: lecture notes, homework assignments, and data. We'll pull updates to this repo throughout the course.
+This is now your local copy of the course materials: lecture notes, data, and in the future, the homework assignments.
 
-I'd like you to also create a folder in your home directory called `workspace` to keep this and your other course work organized.
+We'll pull updates to this repo throughout the course.
 
 ---
 
-## `git status` and Remotes
+## `git status`
 
 ```bash
 git status
@@ -176,11 +270,17 @@ git status
 
 Tells you what's changed in your local copy since the last commit.
 
+---
+
+## Remotes
+
+Remotes refer to the remote repository that we are working with. For the repo we just cloned, we'll be working with the default remote, known as `origin`.
+
 ```bash
 git remote -v
 ```
 
-Shows `origin` — the remote (GitHub) repository your local clone came from, and where we'll pull future updates from.
+This command with the argument `-v` gives us a verbose message of the remotes we have. It will show the name of the remote and where it is stored.
 
 ---
 
@@ -195,6 +295,8 @@ Shows `origin` — the remote (GitHub) repository your local clone came from, an
 
 ---
 
+## The Tech Stack
+
 This class is built on the following Tech Stack:
 
 `conda` - We will be primarily using conda to set up the environment on our computers
@@ -203,17 +305,40 @@ This class is built on the following Tech Stack:
 
 `conda` and `pip` are both package management systems. `pip` is specific to Python package management whereas `conda` is a more general manager that can also create environments (isolated installation environments).
 
+---
+
+## The Tech Stack, cont.
+
 `marp` - Presentation package to create slides using Markdown.
+
+`JupyterLite` - A full Python console, running right in your browser. We'll use it throughout the semester for live demos.
 
 ---
 
-We will be using the following tools:
+## Terminal (`ipython`)
 
-- terminal
-- `conda`
-- `ipython`
-- VS Code
-- Jupyterlab
+A more comfortable place to run Python interactively than the plain `python` shell — syntax highlighting, tab completion, and better history.
+
+---
+
+## Jupyter Notebooks
+
+A notebook interface for writing and running Python in cells, mixing code, output, and notes. JupyterLite gives us this experience right in the browser, no install needed.
+
+---
+
+## Try it live
+
+<style scoped>section { font-size: 24px; }</style>
+
+```python
+print("Hello, JupyterLite!")
+```
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:440px; border:1px solid #ccc;"
+></iframe>
 
 ---
 
@@ -226,6 +351,10 @@ conda --version
 python --version
 conda env list
 ```
+
+---
+
+## Setting up This Course's Environment
 
 This course's environment is described in `environment.yml`, in the root of the course repo:
 
@@ -263,13 +392,13 @@ This is crucial for reproducible workflows and for writing clean code.
 ## My Workspace*
 
 ```bash
-/Users/teonbrooks/codespace
+/Users/teonbrooks/workspace
 ├── _websites
 ├── mne-python
-├── mskcc-python
+├── gsk-intro-scientific-python-course
 ├── OcularLDT-project
-├── phd-thesis
-└── projet-vie
+├── passports.social
+└── phd-thesis
 ```
 
 <style scoped>p { font-size: 12px; text-align: right; }</style>
@@ -281,7 +410,7 @@ This is crucial for reproducible workflows and for writing clean code.
 ## Workspace
 
 You should have a folder to store all of your projects.
-I call mine `codespace`.
+I call mine `workspace`.
 
 Each project should have a descriptive yet succinct title.
 
@@ -292,6 +421,7 @@ Each project should have a descriptive yet succinct title.
 <style scoped>section { font-size: 32px; }</style>
 
 - Text Editor: [VSCode](https://code.visualstudio.com/)
+  - New kid on the block: [Zed](https://zed.dev/)
 - Terminal: [zsh](https://ohmyz.sh/)
   - Themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 - Notes: [Obsidian](https://obsidian.md/)
@@ -301,7 +431,7 @@ Each project should have a descriptive yet succinct title.
 
 ---
 
-## Let's take the next few minutes to download and install VSCode
+## <!-- fit --> Quick Break
 
 ---
 
@@ -339,10 +469,10 @@ So why use Python?
 
 Python works well with lower-level languages like C because Python is written in C.
 
-Software engineers who want to write really performant code will write in a system programming language like C or Rust, but they will write bindings to a higher level language like Python because it's easier to use.
+Software engineers who want to write really performant code will write in a system programming language like C or Rust, but they will write bindings to a higher-level language like Python because it's easier to use.
 
 Here's a link to a documentary about the origins of Python:
-<https://youtu.be/GfH4QL4VqJ0?si=K7TZ8MjEwT4oTQBp>
+[youtu.be/GfH4QL4VqJ0](https://youtu.be/GfH4QL4VqJ0?si=K7TZ8MjEwT4oTQBp)
 
 ---
 
@@ -354,12 +484,12 @@ Here's a link to a documentary about the origins of Python:
 
 ---
 
-## <!-- fit --> Quick Break
+## <!-- fit --> Let's checkout
+## <!-- fit --> the terminal and ipython
 
 ---
 
-## <!-- fit --> Let's checkout
-## <!-- fit --> the terminal and ipython
+## Launching an Interactive Shell
 
 Launch an interactive Python shell:
 
@@ -387,15 +517,64 @@ Sequence types - lists, tuple, range
 
 Set types - sets
 
+Mapping types - dict
+
 ---
 
 ## Try it live
 
 <style scoped>section { font-size: 24px; }</style>
 
+```python
+type(1)
+```
+
+```python
+type(1.0)
+```
+
+```python
+type(True)
+```
+
+```python
+type("hello")
+```
+
+```python
+type([1, 2, 3])
+```
+
 <iframe
-  src="https://teonbrooks.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1&code=type%281%29%0Atype%281.0%29%0Atype%28True%29%0Atype%28%22hello%22%29%0Atype%28%5B1%2C%202%2C%203%5D%29"
-  style="width:100%; height:440px; border:1px solid #ccc;"
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:320px; border:1px solid #ccc;"
+></iframe>
+
+---
+
+## Try it live, cont.
+
+<style scoped>section { font-size: 24px; }</style>
+
+```python
+type((1, 2, 3))
+```
+
+```python
+type({1, 2, 3})
+```
+
+```python
+type({"a": 1})
+```
+
+```python
+type(range(5))
+```
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:340px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -419,7 +598,7 @@ e.g. sets, tuples
 
 ## Checking an Object's Type
 
-To check the type of an object, here are a couple built-in convenience functions:
+To check the type of an object, here are a couple of built-in convenience functions:
 
 - `type(obj)`: returns the type of a given object
 - `isinstance(obj, list)`: checks whether `obj` is an instance of a given type
@@ -430,9 +609,17 @@ To check the type of an object, here are a couple built-in convenience functions
 
 <style scoped>section { font-size: 24px; }</style>
 
+```python
+type([1, 2, 3])
+```
+
+```python
+isinstance([1, 2, 3], list)
+```
+
 <iframe
-  src="https://teonbrooks.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1&code=type%28%5B1%2C%202%2C%203%5D%29%0Aisinstance%28%5B1%2C%202%2C%203%5D%2C%20list%29"
-  style="width:100%; height:440px; border:1px solid #ccc;"
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:420px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -449,9 +636,17 @@ Q: What happens when you add them together?
 
 <style scoped>section { font-size: 24px; }</style>
 
+```python
+1 + 1.0
+```
+
+```python
+type(1 + 1.0)
+```
+
 <iframe
-  src="https://teonbrooks.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1&code=1%20%2B%201.0%0Atype%281%20%2B%201.0%29"
-  style="width:100%; height:440px; border:1px solid #ccc;"
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:420px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -462,9 +657,21 @@ You can assign a value to a variable using the assignment operator `=`.
 
 <style scoped>section { font-size: 24px; }</style>
 
+```python
+x = 5
+```
+
+```python
+x
+```
+
+```python
+x + 10
+```
+
 <iframe
-  src="https://teonbrooks.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1&code=x%20%3D%205%0Ax%0Ax%20%2B%2010"
-  style="width:100%; height:400px; border:1px solid #ccc;"
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:320px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -476,6 +683,9 @@ Python ships with functions ready to use, no import needed:
 - `len(obj)`: length of a sequence
 - `max(...)` / `min(...)`: largest / smallest value
 - `sum(obj)`: total of a sequence of numbers
+- `abs(x)`: absolute value
+- `any(...)` / `all(...)`: `True` if any / all elements are truthy
+- `bool(x)`: convert to `True`/`False`
 
 ---
 
@@ -483,9 +693,48 @@ Python ships with functions ready to use, no import needed:
 
 <style scoped>section { font-size: 24px; }</style>
 
+```python
+len([1, 2, 3])
+```
+
+```python
+max(4, 7, 2)
+```
+
+```python
+min(4, 7, 2)
+```
+
+```python
+sum([1, 2, 3, 4])
+```
+
 <iframe
-  src="https://teonbrooks.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1&code=len%28%5B1%2C%202%2C%203%5D%29%0Amax%284%2C%207%2C%202%29%0Asum%28%5B1%2C%202%2C%203%2C%204%5D%29"
-  style="width:100%; height:440px; border:1px solid #ccc;"
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:340px; border:1px solid #ccc;"
+></iframe>
+
+---
+
+## Try it live, cont.
+
+<style scoped>section { font-size: 24px; }</style>
+
+```python
+abs(-5)
+```
+
+```python
+any([False, False, True])
+```
+
+```python
+all([True, True, False])
+```
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:380px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -504,15 +753,51 @@ import math
 
 <style scoped>section { font-size: 24px; }</style>
 
+```python
+import math
+```
+
+```python
+math.sqrt(16)
+```
+
+```python
+math.pi
+```
+
 <iframe
-  src="https://teonbrooks.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1&code=import%20math%0Amath.sqrt%2816%29%0Amath.pi"
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:380px; border:1px solid #ccc;"
+></iframe>
+
+---
+
+## <!-- fit --> Exercise (10-15 min)
+
+---
+
+## In Groups...
+
+<style scoped>section { font-size: 24px; }</style>
+
+1. Assign your name, age, and favorite number to three variables of different types (`str`, `int`, `float`)
+2. Use `type()` to confirm each one
+3. Put your group's ages into a list. Use `len()`, `max()`, `min()`, and `sum()` to answer: how many people are in your group? What's the average age?
+4. `import math` and use it to compute something — e.g. `math.sqrt()` of your group's total age
+
+---
+
+## Your Workspace
+
+<style scoped>section { font-size: 24px; }</style>
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
   style="width:100%; height:440px; border:1px solid #ccc;"
 ></iframe>
 
 ---
 
 ## <!-- fit --> That's it for today!
-
-This week's assignment is posted in `assignments/assignment_01`.
 
 Next class: Module 02 — Jupyter Notebooks, Control Flow, and Functions.
