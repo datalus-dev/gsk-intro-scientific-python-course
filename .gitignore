@@ -9,8 +9,10 @@ wheels/
 # Virtual environments
 .venv
 
-# MyST build outputs
+# Build outputs
 _build
+.cache
+.jupyterlite.doit.db
 .DS_Store
 .python-version
 /node_modules

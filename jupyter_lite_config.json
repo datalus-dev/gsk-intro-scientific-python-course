@@ -1,0 +1,6 @@
+{
+  "PyodideLockAddon": {
+    "enabled": true,
+    "prefetch_extra": ["numpy", "scipy", "pandas", "matplotlib", "scikit-learn", "statsmodels"]
+  }
+}

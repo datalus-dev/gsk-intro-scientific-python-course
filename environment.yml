@@ -1,0 +1,13 @@
+name: gsk
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyter
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - statsmodels
+  - scikit-learn
