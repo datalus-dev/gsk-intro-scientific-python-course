@@ -76,9 +76,13 @@ Programming is a team sport. Even at companies, if someone is writing, then some
 
 ## <!-- fit --> Instructor Introductions
 
-<b>Instructor</b>: [Teon Brooks, PhD](https://docs.google.com/presentation/d/1Tscpd6hqWgSDEuMd1yfW-2d29qHVwQj2boeY4P0XAaI/edit?slide=id.g37fbeac244c_0_0#slide=id.g37fbeac244c_0_0)
+---
 
-<b>TA</b>: [Angel Tang](https://docs.google.com/presentation/d/1Tscpd6hqWgSDEuMd1yfW-2d29qHVwQj2boeY4P0XAaI/edit?slide=id.g38736360384_2_45#slide=id.g38736360384_2_45)
+![bg](../../syllabus/2025/instructor-teon.png)
+
+---
+
+![bg](../../syllabus/2025/instructor-angel.png)
 
 ---
 
