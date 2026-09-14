@@ -7,6 +7,7 @@ on:
       - jupyter_lite_config.json
       - jupyterlite/**
       - modules/module_01.md
+      - site/**
       - package.json
       - package-lock.json
       - .github/workflows/deploy-jupyterlite.yml
@@ -51,6 +52,9 @@ jobs:
         run: |
           mkdir -p _site/syllabus/2026
           cp syllabus/2026/instructor-teon-photo.png syllabus/2026/instructor-tejiri-photo.png _site/syllabus/2026/
+
+      - name: Copy landing page
+        run: cp site/index.html _site/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
