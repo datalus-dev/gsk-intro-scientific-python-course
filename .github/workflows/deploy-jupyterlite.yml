@@ -6,8 +6,7 @@ on:
     paths:
       - jupyter_lite_config.json
       - jupyterlite/**
-      - modules/module_01.md
-      - modules/module_02.md
+      - modules/**
       - site/**
       - package.json
       - package-lock.json
@@ -46,19 +45,25 @@ jobs:
       - name: Install slide build tools
         run: npm ci
 
-      - name: Build Module 1 slides
-        run: npx marp --html modules/module_01.md -o _site/modules/html/module_01.html
-
-      - name: Build Module 2 slides
-        run: npx marp --html modules/module_02.md -o _site/modules/html/module_02.html
+      - name: Build module slides
+        run: |
+          mkdir -p _site/modules/html
+          for f in modules/module_*.md; do
+            # Only modules rewritten for 2026 have an active (uncommented)
+            # `title:` in their frontmatter; others are last year's drafts.
+            if grep -qE '^title:' "$f"; then
+              name=$(basename "$f" .md)
+              npx marp --html "$f" -o "_site/modules/html/${name}.html"
+            fi
+          done
 
       - name: Copy slide assets
         run: |
           mkdir -p _site/syllabus/2026
           cp syllabus/2026/instructor-teon-photo.png syllabus/2026/instructor-tejiri-photo.png _site/syllabus/2026/
 
-      - name: Copy landing page
-        run: cp site/index.html _site/index.html
+      - name: Generate landing page
+        run: node site/generate-index.js _site/index.html
 
       - uses: actions/upload-pages-artifact@v5
         with:
