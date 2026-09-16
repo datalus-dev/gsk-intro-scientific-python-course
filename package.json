@@ -1,4 +1,13 @@
 {
+  "name": "mskcc-python",
+  "scripts": {
+    "slides": "marp --html",
+    "build:slides": "for f in modules/module_*.md; do grep -qE '^title:' \"$f\" && marp --html \"$f\" -o \"modules/html/$(basename \"$f\" .md).html\"; done",
+    "build:notebooks": "jupyter lite build --output-dir _build/jupyterlite --contents notebooks",
+    "build:assignments": "for f in assignments/*/*.md; do pandoc \"$f\" -o \"${f%.md}.pdf\" --pdf-engine=xelatex -V geometry:margin=1in; done",
+    "build:site": "node site/generate-index.js",
+    "build": "npm run build:slides && npm run build:notebooks && npm run build:site"
+  },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.2.3"
   }
