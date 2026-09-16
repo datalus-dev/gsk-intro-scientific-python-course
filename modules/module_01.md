@@ -77,6 +77,8 @@ Content covered:
 3. Setting up Your Python Environment
 4. What is Python
 
+---
+<style scoped>section { font-size: 28px; }</style>
 By the end of this class, you will be able to:
 
 - Launch and navigate a command-line interface
@@ -94,7 +96,7 @@ By the end of this class, you will be able to:
 ## <!-- fit --> Instructor Introductions
 
 ---
-<style scoped>section { font-size: 22px; }</style>
+<style scoped>section { font-size: 20px; }</style>
 
 <div style="display:flex; gap:24px; align-items:flex-start;">
 <div>
@@ -294,6 +296,7 @@ This command with the argument `-v` gives us a verbose message of the remotes we
 - Setting up project and file organization
 
 ---
+<style scoped>section { font-size: 26px; }</style>
 
 ## The Tech Stack
 
@@ -462,6 +465,7 @@ Instead of the "write your program and hope it executes properly" (compiled lang
 > Well thought out language, allowing to write very readable and well structured code: we "code what we think". (Scientific Python lectures 1.1.1)
 
 ---
+<style scoped>section { font-size: 26px; }</style>
 
 ## A little Motivation
 
@@ -537,6 +541,12 @@ type(1.0)
 type(True)
 ```
 
+---
+
+## Try it live, cont.
+
+<style scoped>section { font-size: 24px; }</style>
+
 ```python
 type("hello")
 ```
@@ -574,7 +584,7 @@ type(range(5))
 
 <iframe
   src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
-  style="width:100%; height:340px; border:1px solid #ccc;"
+  style="width:100%; height:300px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -638,7 +648,7 @@ name.split(" ")
 
 <iframe
   src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
-  style="width:100%; height:340px; border:1px solid #ccc;"
+  style="width:100%; height:300px; border:1px solid #ccc;"
 ></iframe>
 
 ---
@@ -701,6 +711,12 @@ numbers[0]
 ```python
 numbers[-1]
 ```
+
+---
+
+## Try it live, cont.
+
+<style scoped>section { font-size: 24px; }</style>
 
 ```python
 numbers[2:4]
@@ -904,7 +920,7 @@ sum([1, 2, 3, 4])
 
 <iframe
   src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
-  style="width:100%; height:340px; border:1px solid #ccc;"
+  style="width:100%; height:300px; border:1px solid #ccc;"
 ></iframe>
 
 ---
