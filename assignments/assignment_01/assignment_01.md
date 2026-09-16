@@ -1,47 +1,49 @@
 # Assignment 1
 
-Due October 27, 2025
+Due September 21, 2026
 
-For this assignment, I would like you to use Jupyter Notebooks to share your findings with me.
+This assignment covers material from Modules 1 and 2: Python basics, git, control flow, built-in functions, and functions. Do your work in a Jupyter Notebook, with Markdown cells describing what you're doing and why, and code cells showing your work.
 
-This notebook should have Markdown cells to describe the steps that you are doing and code blocks to show your work.
+## 1. Explore a Library
 
-I would like everyone to complete the RNASeq assignment. The focus of this assignment is to:
+Find a Python library relevant to your own research (something you don't already know well).
 
-- get familiar with setting up a project folder with the included data source
-- load a dataset with Pandas
-- do some exploratory data analysis
-- provide some summary statistics on your dataset
-- generate some plot(s) to describe your work
+- Find its GitHub repository
+- Fork it to your own GitHub namespace
+- Clone your fork to your machine
 
-For students looking for a more advanced option, I have included a second assignment that looks at totally different data source, MEG brain data.
+In a Markdown cell in your notebook, describe the library — its name, its GitHub URL, and why it's relevant to your research — and include the commands you used to fork and clone it.
 
-## RNASeq
+You don't need to push anything back to GitHub yet — local commits are enough for now. We'll cover pushing your work in Module 4.
 
-For this assignment, we will be looking at RNASeq data. With this dataset, I would like you to do the follow:
+## 2. Data Types
 
-- load the data
-- create new columns to extract metadata (group, origin)
-- provide some summary statistics
-- create some plots
+- Assign a few variables of different types (`str`, `int`, `float`, `list`, `dict`) and use `type()` to confirm each
+- Pick a string and try at least three different string methods (e.g. `upper`, `split`, `join`)
+- Pick a list and try `append`, slicing, and negative indexing
+- Build a dictionary with at least two entries and retrieve a value with both `[]` and `.get()`
 
-## Advanced challenge
+## 3. Control Flow
 
-We will be looking at some MEG data from an auditory-visual task. The goal of this assignment is to work with a different type of data using a Python package you may be unfamiliar with.
+- Write an `if`/`elif`/`else` statement that checks something about one of the variables you created above
+- Write a `for` loop that builds a new list from an existing one (e.g. squaring each number, or uppercasing each string)
 
-I would like you to focus on using the tutorials to do the following steps:
+## 4. Built-in Functions
 
-- Load raw MEG data
-- Create an events array
-- Add events to raw object as annotations
-- Create epochs
-- Create evokeds
-- Create plot of evokeds
-- Create a dataframe from an evoked
-- Provide some summary statistics
+- Use at least three different built-in functions (e.g. `len()`, `max()`, `min()`, `any()`, `all()`) on your own data
+- In a Markdown cell, answer: how is `all()` different from `any()`?
 
-### Resources
+## 5. Functions
 
-- https://mne.tools/stable/auto_tutorials/intro/20_events_from_raw.html
+- Define a function that takes an argument and uses control flow inside it (an `if`/`else` or a `for` loop)
+- Call your function and show the result
 
-- https://mne.tools/stable/auto_tutorials/evoked/20_visualize_evoked.html
+## 6. Save Your Work
+
+In your cloned fork, stage and commit your notebook:
+
+```bash
+git add <your_notebook>.ipynb
+git commit -m "Complete Assignment 1"
+git log
+```

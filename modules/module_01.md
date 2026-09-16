@@ -596,6 +596,199 @@ e.g. sets, tuples
 
 ---
 
+## Strings
+
+Strings store sequences of characters.
+
+Objects can have methods — functions stored on them. Access an object's methods with a period after its name, then hit tab to see what's available.
+
+Use a pair of `''` or `""` to make a string. If your string needs to contain one type of quote, use the other to wrap it.
+
+---
+
+## Strings, cont.
+
+Some common string methods:
+
+- `join`: combine an iterable of strings into one
+- `split`: divide a string into a list
+- `upper` / `lower`: convert to all uppercase / lowercase
+
+---
+
+## Try it live
+
+<style scoped>section { font-size: 24px; }</style>
+
+```python
+name = "Teon Brooks"
+```
+
+```python
+name.upper()
+```
+
+```python
+name.lower()
+```
+
+```python
+name.split(" ")
+```
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:340px; border:1px solid #ccc;"
+></iframe>
+
+---
+
+## Lists
+
+Lists are containers — they can hold other data types, and they're iterable, meaning you can loop over them.
+
+Some common methods:
+
+- `append`: add an item to the end of a list
+- `extend`: combine another list or iterable into it
+- `index`: return the position of a value
+
+---
+
+## Lists, cont.
+
+Python is zero-indexed — the first item in a list is index `0`.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+numbers[0]
+```
+
+Index `-1` has a special meaning: it returns the last element.
+
+---
+
+## Lists, cont. — Slicing
+
+Indexing a range of values is called slicing — the result is a list.
+
+```python
+numbers[2:4]
+```
+
+Return every second item:
+
+```python
+numbers[::2]
+```
+
+The general form is `list[start:stop:step]`.
+
+---
+
+## Try it live
+
+<style scoped>section { font-size: 24px; }</style>
+
+```python
+numbers = [1, 2, 3, 4, 5]
+```
+
+```python
+numbers[0]
+```
+
+```python
+numbers[-1]
+```
+
+```python
+numbers[2:4]
+```
+
+```python
+numbers[::2]
+```
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:340px; border:1px solid #ccc;"
+></iframe>
+
+---
+
+## Strings, revisited
+
+`.join` takes an iterable and concatenates it with the given string:
+
+```python
+"-".join(["apples", "oranges", "strawberries"])
+```
+
+`.split` does the reverse — it breaks a string apart into a list:
+
+```python
+"apples-oranges-strawberries".split("-")
+```
+
+---
+
+## Dictionaries
+
+Dictionaries are also containers — a mapping type, storing content in key/value pairs (also called entries).
+
+```python
+my_dict = {
+    "pet": "cat",
+    "animals": ["cats", "dogs", "birds"],
+}
+```
+
+You can also build one with the `dict()` constructor, though keys built that way can't contain symbols like `-` or `*`.
+
+---
+
+## Dictionaries, cont.
+
+Retrieve a value using its key:
+
+```python
+my_dict["pet"]
+```
+
+`.get()` also retrieves a value, with a default for when the key doesn't exist:
+
+```python
+my_dict.get("missing", "not found")
+```
+
+Q: What happens if you index with `[]` using a key that isn't in the dictionary?
+
+---
+
+## Try it live
+
+<style scoped>section { font-size: 24px; }</style>
+
+```python
+my_dict = {"pet": "cat", "animals": ["cats", "dogs", "birds"]}
+```
+
+```python
+my_dict["pet"]
+```
+
+```python
+my_dict.get("missing", "not found")
+```
+
+<iframe
+  src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/repl/index.html?kernel=python&toolbar=1"
+  style="width:100%; height:340px; border:1px solid #ccc;"
+></iframe>
+
+---
+
 ## Checking an Object's Type
 
 To check the type of an object, here are a couple of built-in convenience functions:

@@ -124,25 +124,28 @@ This class is focused on getting comfortable with using the Terminal. We will be
 #### Module 2: Jupyter Notebooks, Control Flow, and Functions
 September 16, 2026
 
-This class is focused on using Python in a notebook context and exploring its interface. This will be the primary way we interact with Python for the remainder of the class. We will also learn some new git commands as well.
+This class covers saving and tracking your own work with git, including forking the course repo to your own GitHub namespace. We'll then move into using Python in a notebook context, which will be the primary way we interact with Python for the remainder of the class.
 
 **By the end of this class, you will be able to:**
 
-- Create and run code in a Jupyter Notebook
+- Fork a repository and configure `origin`/`upstream` remotes
 - Save and track your own work with `git add`, `git commit`, and `git log`
 - Use `.gitignore`
+- Create and run code in a Jupyter Notebook
 - Write conditional logic and loops
+- Call built-in functions
 - Define and call functions
-- Describe what an object/class is
 
-1. Jupyter Notebooks
-2. Saving your work with git
-   1. `git add` and `git commit`
-   2. `git log`
-   3. `.gitignore`
+1. Saving your work with git
+   1. Forking a repo
+   2. `origin` and `upstream` remotes
+   3. `git add` and `git commit`
+   4. `git log`
+   5. `.gitignore`
+2. Jupyter Notebooks
 3. Control Flow (If/Else, For loops)
-4. Functions
-5. Objects/Classes
+4. Built-in Functions
+5. Functions
 6. Bringing it all together
 
 ---
@@ -152,23 +155,25 @@ This class is focused on using Python in a notebook context and exploring its in
 #### Module 3: Intro to NumPy and SciPy
 September 21, 2026
 
-This class covers using arrays in NumPy and basic statistics with SciPy. We will also learn how to retrieve updates to a git repo and how to read file diffs.
+This class introduces objects and classes, then covers using arrays in NumPy and basic statistics with SciPy. We will also learn how to retrieve updates to a git repo and how to read file diffs.
 
 **By the end of this class, you will be able to:**
 
+- Describe what an object/class is
 - Pull updates from a remote repository with `git pull` and read a `git diff`
 - Create and manipulate NumPy arrays (`ndarray`)
 - Perform numeric operations and simple simulations with NumPy
 - Run and interpret a correlation and a t-test with SciPy
 
-1. Staying in sync with git
+1. Objects/Classes
+2. Staying in sync with git
    1. `git pull`
    2. Reading a `git diff`
-2. Intro to NumPy
+3. Intro to NumPy
    1. NDarray
    2. Numeric operations
    3. Random numbers and Simulations
-3. Intro to SciPy - Basic stats
+4. Intro to SciPy - Basic stats
    1. Correlation
    2. T-tests
 
