@@ -34,7 +34,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install JupyterLite build tools
-        run: pip install jupyterlite-core jupyterlite-pyodide-kernel pyodide-lock packaging uv
+        run: pip install jupyterlite-core jupyterlite-pyodide-kernel pyodide-lock packaging uv jupyter-server
 
       - name: Build JupyterLite site
         run: jupyter lite build --output-dir _site/jupyterlite --contents jupyterlite
