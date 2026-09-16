@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - jupyter_lite_config.json
-      - jupyterlite/**
+      - notebooks/**
       - modules/**
       - site/**
       - package.json
@@ -36,7 +36,7 @@ jobs:
         run: pip install jupyterlite-core jupyterlite-pyodide-kernel pyodide-lock packaging uv jupyter-server
 
       - name: Build JupyterLite site
-        run: jupyter lite build --output-dir _site/jupyterlite --contents jupyterlite
+        run: jupyter lite build --output-dir _site/jupyterlite --contents notebooks
 
       - uses: actions/setup-node@v7
         with:

@@ -16,6 +16,8 @@ _build
 .DS_Store
 .python-version
 /node_modules
+.ipynb_checkpoints
+.jupyter
 
 # Marp outputs
 modules/html/*.html

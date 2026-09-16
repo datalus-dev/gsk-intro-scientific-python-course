@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Pages site (https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/),
   built and published automatically by .github/workflows/deploy-jupyterlite.yml
   on every push to main. To test against a local build instead, run
-  `jupyter lite build --output-dir _build/jupyterlite --contents jupyterlite`,
+  `jupyter lite build --output-dir _build/jupyterlite --contents notebooks`,
   serve it, and swap the `src` host accordingly.
 -->
 
