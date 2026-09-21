@@ -197,9 +197,9 @@ that you first understand the fundamentals of programming.
 | Week | Modules | Topics |
 |---|---|---|
 | 1 | 1-2 | Intro to Python; Notebooks, Control Flow, Functions |
-| 2 | 3-4 | NumPy & SciPy; Matplotlib & Seaborn |
+| 2 | 3-4 | NumPy; Matplotlib & Seaborn |
 | 3 | 5-6 | Pandas |
-| 4 | 7-8 | statsmodels & scikit-learn; Agentic Programming |
+| 4 | 7-8 | SciPy, statsmodels & scikit-learn; Agentic Programming |
 | 5 | 9-10 | Advanced Topic; Final Project Presentation |
 
 A weekly assignment is given each Wednesday, due the following Monday.

@@ -152,18 +152,17 @@ This class covers saving and tracking your own work with git, including forking 
 
 ### Week 2
 
-#### Module 3: Intro to NumPy and SciPy
+#### Module 3: Intro to NumPy
 September 21, 2026
 
-This class introduces objects and classes, then covers using arrays in NumPy and basic statistics with SciPy. We will also learn how to retrieve updates to a git repo and how to read file diffs.
+This class introduces objects and classes, then covers using arrays in NumPy, including generating random numbers and running simple simulations. We will also learn how to retrieve updates to a git repo and how to read file diffs.
 
 **By the end of this class, you will be able to:**
 
 - Describe what an object/class is
 - Pull updates from a remote repository with `git pull` and read a `git diff`
 - Create and manipulate NumPy arrays (`ndarray`)
-- Perform numeric operations and simple simulations with NumPy
-- Run and interpret a correlation and a t-test with SciPy
+- Generate random numbers with NumPy and use them to run simple simulations
 
 1. Objects/Classes
 2. Staying in sync with git
@@ -173,9 +172,6 @@ This class introduces objects and classes, then covers using arrays in NumPy and
    1. NDarray
    2. Numeric operations
    3. Random numbers and Simulations
-4. Intro to SciPy - Basic stats
-   1. Correlation
-   2. T-tests
 
 #### Module 4: Intro to Matplotlib and Seaborn
 September 23, 2026
@@ -229,15 +225,19 @@ This class covers more hands-on uses of Pandas.
 #### Module 7: Data Science in Practice
 October 5, 2026
 
-This class focuses on introducing statsmodels and scikit-learn for data analysis and data modeling.
+This class covers basic statistics with SciPy, then introduces statsmodels and scikit-learn for data analysis and data modeling.
 
 **By the end of this class, you will be able to:**
 
+- Run and interpret a correlation and a t-test with SciPy
 - Fit and interpret a statistical model with statsmodels
 - Train and evaluate a basic model with scikit-learn
 
-1. statsmodels
-2. scikit-learn
+1. Intro to SciPy - Basic stats
+   1. Correlation
+   2. T-tests
+2. statsmodels
+3. scikit-learn
 
 #### Module 8: Agentic Programming
 October 7, 2026
