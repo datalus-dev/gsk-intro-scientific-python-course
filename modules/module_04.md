@@ -325,6 +325,19 @@ git pull upstream main
 
 ---
 
+## Open Today's Notebook
+
+We'll use this notebook, `notebooks/module_04.ipynb`, for the rest of class.
+
+```bash
+conda activate gsk
+jupyter lab
+```
+
+In Jupyter Lab, open `notebooks/module_04.ipynb`. It has today's code and a cell for each practice question.
+
+---
+
 <style scoped>.emoji { font-size: 48px; }</style>
 Matplotlib is the main plotting library in Python.
 
@@ -560,7 +573,7 @@ Commit and push your notebook and figures from today on their own branch:
 
 ```bash
 git switch -c module-04
-git add <your_notebook>.ipynb *.png
+git add notebooks/module_04.ipynb notebooks/*.png
 git commit -m "Module 4 plotting exercises"
 git push origin module-04
 ```
