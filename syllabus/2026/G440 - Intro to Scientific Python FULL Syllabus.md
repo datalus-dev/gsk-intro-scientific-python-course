@@ -129,7 +129,7 @@ This class covers saving and tracking your own work with git, including forking 
 **By the end of this class, you will be able to:**
 
 - Fork a repository and configure `origin`/`upstream` remotes
-- Save and track your own work with `git add`, `git commit`, and `git log`
+- Save and track your own work on a branch with `git switch -c`, `git add`, `git commit`, and `git log`
 - Use `.gitignore`
 - Create and run code in a Jupyter Notebook
 - Write conditional logic and loops
@@ -139,9 +139,10 @@ This class covers saving and tracking your own work with git, including forking 
 1. Saving your work with git
    1. Forking a repo
    2. `origin` and `upstream` remotes
-   3. `git add` and `git commit`
-   4. `git log`
-   5. `.gitignore`
+   3. Keeping your work off `main` with `git switch -c`
+   4. `git add` and `git commit`
+   5. `git log`
+   6. `.gitignore`
 2. Jupyter Notebooks
 3. Control Flow (If/Else, For loops)
 4. Built-in Functions

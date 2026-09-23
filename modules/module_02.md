@@ -78,7 +78,7 @@ Content covered:
 By the end of this class, you will be able to:
 
 - Fork a repository and configure `origin`/`upstream` remotes
-- Save and track your own work with `git add`, `git commit`, and `git log`
+- Save and track your own work on a branch with `git switch -c`, `git add`, `git commit`, and `git log`
 - Use `.gitignore`
 - Create and run code in a Jupyter Notebook
 - Write conditional logic and loops
@@ -132,6 +132,20 @@ git remote -v
 ```
 
 You should now see `origin` → your fork, `upstream` → the course repo.
+
+---
+
+## Keep Your Work off `main`
+
+Your `main` branch should always match the course repo, so that pulling course updates stays simple.
+
+Before you commit your own work, create a branch for it and switch to it:
+
+```bash
+git switch -c module-02
+```
+
+We'll cover branches in more depth in Module 4. For now: new work, new branch.
 
 ---
 
@@ -553,7 +567,10 @@ def classify_numbers(numbers):
 
 ## Save Your Work
 
+Check that you're on your `module-02` branch (marked with a `*`), then commit:
+
 ```bash
+git branch
 git add module_02.ipynb
 git commit -m "Complete Module 02 exercises"
 git log
@@ -563,4 +580,4 @@ git log
 
 ## <!-- fit --> That's it for today!
 
-Next class: Module 03 — Intro to NumPy and SciPy.
+Next class: Module 03 — Intro to NumPy.
