@@ -143,6 +143,19 @@ Let's work on these questions:
 
 ---
 
+## Open Today's Notebook
+
+We'll use this notebook, `notebooks/module_03.ipynb`, for the rest of class.
+
+```bash
+conda activate gsk
+jupyter lab
+```
+
+In Jupyter Lab, open `notebooks/module_03.ipynb`. It has today's code and a cell for each practice question.
+
+---
+
 ## Markdown Cells
 
 Recall from Module 2: change a cell's type to Markdown (`Esc` then `m`) to write formatted notes instead of code.
