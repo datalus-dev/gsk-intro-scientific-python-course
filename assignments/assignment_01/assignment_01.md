@@ -40,9 +40,10 @@ You don't need to push anything back to GitHub yet — local commits are enough 
 
 ## 6. Save Your Work
 
-In your cloned fork, stage and commit your notebook:
+In your cloned fork, keep `main` in sync with the course repo and do your work on its own branch. Create the branch before you commit:
 
 ```bash
+git switch -c assignment-01
 git add <your_notebook>.ipynb
 git commit -m "Complete Assignment 1"
 git log
