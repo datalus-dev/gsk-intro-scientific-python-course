@@ -1,5 +1,5 @@
 ---
-title: Module 04: Intro to Matplotlib and Seaborn
+title: Module 04: Intro to Matplotlib
 marp: true
 html: true
 theme: gaia
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-# Module 04: Intro to Matplotlib and Seaborn
+# Module 04: Intro to Matplotlib
 
 September 23, 2026
 
@@ -65,7 +65,6 @@ Content covered:
    3. A Minimal GitHub Workflow
 3. Building a Plot in Matplotlib
 4. Building Subplots in Matplotlib
-5. Intro to Seaborn
 
 ---
 
@@ -76,7 +75,6 @@ By the end of this class, you will be able to:
 - Create a branch and open a pull request
 - Build and customize a plot in Matplotlib
 - Build subplots in Matplotlib
-- Produce a basic statistical plot in Seaborn
 
 ---
 
@@ -553,89 +551,6 @@ Let's work on these questions:
 2. In the first, create a lineplot and give it a unique color and linestyle.
 3. In the second, simulate 1,000 draws with `rng.normal()` and plot a histogram.
 4. Add a title to each subplot and to the figure, then save it with `fig.savefig()`.
-
----
-
-## <!-- fit -->5. Intro to Seaborn
-
----
-
-## Seaborn
-
-Seaborn is a high-level visualization library that works on top of matplotlib.
-
-It makes common statistical plots, e.g. distributions and comparisons between groups, quick to make and nice to look at.
-
-Seaborn is already installed in our `gsk` conda environment.
-
----
-
-## Seaborn, cont.
-
-By convention, we import seaborn as `sns`.
-
-```python
-import seaborn as sns
-```
-
-TIL: `sns` comes from an inside joke about West Wing and the character, Samuel Norman Seaborn.
-
-ref: https://github.com/mwaskom/seaborn/issues/229
-
----
-
-## A Basic Statistical Plot
-
-`sns.histplot()` plots the distribution of your data. `kde=True` adds a smoothed estimate of the distribution on top.
-
-```python
-rng = np.random.default_rng(seed=42)
-measurements = rng.normal(loc=100, scale=15, size=1_000)
-
-sns.histplot(x=measurements, kde=True)
-```
-
----
-
-## Seaborn and Matplotlib Together
-
-Seaborn lets us conveniently make plots and we can pass a matplotlib `Axes` to target the location of the plots.
-
-```python
-fig, axes = plt.subplots(1, 2, figsize=(8, 3), layout='constrained')
-sns.histplot(x=measurements, ax=axes[0])
-sns.kdeplot(x=measurements, ax=axes[1])
-axes[0].set_title('Histogram')
-axes[1].set_title('KDE')
-```
-
-The Axes methods we learned, e.g. `.set_title()`, still work on seaborn plots.
-
----
-
-## Comparing Groups
-
-Pass a 2-d array to `data`, and seaborn treats each column as a group:
-
-```python
-groups = rng.normal(loc=[0, 1, 2], scale=1, size=(200, 3))
-
-fig, axes = plt.subplots(1, 2, figsize=(8, 3), layout='constrained')
-sns.boxplot(data=groups, ax=axes[0])
-sns.violinplot(data=groups, ax=axes[1])
-```
-
-`loc=[0, 1, 2]` gives each column a different mean, a nice use of broadcasting from Module 3.
-
----
-
-## Practice (5 min)
-
-Let's work on these questions:
-
-1. Simulate rolling two dice 10,000 times, like in Module 3, and plot the distribution of the sum with `sns.histplot(..., discrete=True)`.
-2. Simulate three groups with different standard deviations and compare them with `sns.boxplot()` and `sns.violinplot()` side by side.
-3. Label your axes, add a figure title, and save your figure.
 
 ---
 

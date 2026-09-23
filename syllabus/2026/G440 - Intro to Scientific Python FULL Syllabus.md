@@ -174,10 +174,10 @@ This class starts with how to retrieve updates to a git repo and how to read fil
    2. Numeric operations
    3. Random numbers and Simulations
 
-#### Module 4: Intro to Matplotlib and Seaborn
+#### Module 4: Intro to Matplotlib
 September 23, 2026
 
-This class starts with logging in to GitHub from the terminal with the GitHub CLI, `gh`, then pushing your work with git and collaborating on GitHub through branches and pull requests. We will then cover building plots using Matplotlib and Seaborn. In Matplotlib, we will learn the anatomy of plots and how to change them directly. We will then use Seaborn for a high-level interface.
+This class starts with logging in to GitHub from the terminal with the GitHub CLI, `gh`, then pushing your work with git and collaborating on GitHub through branches and pull requests. We will then cover building plots using Matplotlib, where we will learn the anatomy of plots and how to change them directly.
 
 **By the end of this class, you will be able to:**
 
@@ -186,7 +186,6 @@ This class starts with logging in to GitHub from the terminal with the GitHub CL
 - Create a branch and open a pull request
 - Build and customize a plot in Matplotlib
 - Build subplots in Matplotlib
-- Produce a basic statistical plot in Seaborn
 
 1. Connecting to GitHub with `gh`
 2. Collaborating with git
@@ -195,7 +194,6 @@ This class starts with logging in to GitHub from the terminal with the GitHub CL
    3. A minimal GitHub workflow: pull requests
 3. Building a plot in Matplotlib
 4. Building subplots in Matplotlib
-5. Intro to Seaborn
 
 ---
 
@@ -221,10 +219,17 @@ This class introduces objects and classes, then Pandas, a dataframe library used
    3. Summary Statistics
    4. Group-apply-combine
 
-#### Module 6: Pandas, continued
+#### Module 6: Pandas, continued, and Intro to Seaborn
 September 30, 2026
 
-This class covers more hands-on uses of Pandas.
+This class covers more hands-on uses of Pandas. We will then use Seaborn, a high-level interface to Matplotlib, to make statistical plots.
+
+**By the end of this class, you will be able to:**
+
+- Produce a basic statistical plot in Seaborn
+
+1. Pandas, continued
+2. Intro to Seaborn
 
 ---
 

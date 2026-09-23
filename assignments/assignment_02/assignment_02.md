@@ -2,7 +2,7 @@
 
 Due September 28, 2026
 
-This assignment covers material from Modules 3 and 4: NumPy arrays, random numbers and simulations, Matplotlib, Seaborn, and pushing your work with git. Do your work in a Jupyter Notebook, with Markdown cells describing what you're doing and why, and code cells showing your work.
+This assignment covers material from Modules 3 and 4: NumPy arrays, random numbers and simulations, Matplotlib, and pushing your work with git. Do your work in a Jupyter Notebook, with Markdown cells describing what you're doing and why, and code cells showing your work.
 
 Before you start, make a branch for this assignment from an up-to-date `main`:
 
@@ -46,20 +46,12 @@ Using `fig, ax = plt.subplots()`:
 - Add a title to each subplot and to the figure with `fig.suptitle()`
 - Save your figure as `random_walks.png` with `fig.savefig()`
 
-## 5. Intro to Seaborn
-
-- Plot the distribution of your 1,000 final positions with `sns.histplot()` and `kde=True`
-- Simulate the final positions of 1,000 walks for three different walk lengths: 100, 400, and 900 steps
-- Compare the three groups side by side with `sns.boxplot()` and `sns.violinplot()`, drawn into two subplots with `ax=`
-- Label your axes and save this figure as `walk_lengths.png`
-- In a Markdown cell, answer: how does the spread of the final positions change as the walks get longer? Compute the standard deviation of each group to support your answer.
-
-## 6. Save and Push Your Work
+## 5. Save and Push Your Work
 
 On your `assignment-02` branch, stage, commit, and push your notebook and figures:
 
 ```bash
-git add <your_notebook>.ipynb random_walks.png walk_lengths.png
+git add <your_notebook>.ipynb random_walks.png
 git commit -m "Complete Assignment 2"
 git push origin assignment-02
 ```

@@ -390,13 +390,18 @@ np.vstack((a, a)).shape   # (4, 3)
 
 ---
 
+<style scoped>section { font-size: 28px; }</style>
+
 ## Practice (5 min)
 
 Let's work on these questions:
 
 1. Create `a = np.arange(6).reshape(2, 3)`. Predict, then check, the shapes of `np.hstack((a, a))` and `np.vstack((a, a))`.
 2. Multiply `a` by `np.array([1, 10, 100])`. Which dimension was broadcast?
-3. Create a function that takes in a list, a parameter for vertical or horizontal or None, returns an array with a duplication either horizontally, vertically, or none at all.
+3. Write a function `duplicate(values, direction)` that turns a list into an array and repeats it:
+   - `duplicate([1, 2, 3], "horizontal")` returns `[1, 2, 3, 1, 2, 3]`
+   - `duplicate([1, 2, 3], "vertical")` returns `[[1, 2, 3], [1, 2, 3]]`
+   - `duplicate([1, 2, 3], None)` returns `[1, 2, 3]`
 
 ---
 
