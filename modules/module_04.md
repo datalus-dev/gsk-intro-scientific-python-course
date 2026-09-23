@@ -272,7 +272,7 @@ First, let's create our branch from `main`, using your own name:
 ```bash
 cd ~/workspace/gsk-intro-scientific-python-course
 git switch main
-git switch -c yearbook-firstname-lastname
+git switch -c yearbook_firstname_lastname
 ```
 
 ---
@@ -305,7 +305,7 @@ git commit -m "Adding Firstname Lastname to the yearbook"
 To share our commit with the project, we need to push our branch with its new commit.
 
 ```bash
-git push origin yearbook-firstname-lastname
+git push origin yearbook_firstname_lastname
 ```
 
 Then, on GitHub, open a pull request from your branch to the course repo's `main`.
