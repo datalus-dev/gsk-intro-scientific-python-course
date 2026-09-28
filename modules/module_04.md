@@ -175,7 +175,7 @@ From now on, `main` only holds what's in the course repo. Your own work goes on 
 
 - `main`: updated only with `git pull upstream main`
 - `assignment-01`, `assignment-02`, ...: one branch per assignment
-- `module-04`, ...: your in-class exercises
+- `personal`: your in-class notes and exercises
 
 If you commit your work on `main`, it no longer matches the course repo, and `git pull` will refuse to update it.
 
@@ -325,11 +325,17 @@ git pull upstream main
 
 ---
 
+<style scoped>section { font-size: 24px; }</style>
+
 ## Open Today's Notebook
 
 We'll use this notebook, `notebooks/module_04.ipynb`, for the rest of class.
 
+First, bring today's module into your `personal` branch. We'll look at how `git rebase` works in Module 5.
+
 ```bash
+git switch personal
+git rebase main
 conda activate gsk
 jupyter lab
 ```
@@ -569,13 +575,12 @@ Let's work on these questions:
 
 ## Save Your Work
 
-Commit and push your notebook and figures from today on their own branch:
+Commit and push your notebook and figures from today on your `personal` branch:
 
 ```bash
-git switch -c module-04
 git add notebooks/module_04.ipynb notebooks/*.png
 git commit -m "Module 4 plotting exercises"
-git push origin module-04
+git push origin personal
 ```
 
 ---

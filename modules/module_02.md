@@ -139,13 +139,13 @@ You should now see `origin` → your fork, `upstream` → the course repo.
 
 Your `main` branch should always match the course repo, so that pulling course updates stays simple.
 
-Before you commit your own work, create a branch for it and switch to it:
+Before you commit your own work, create a branch called `personal` and switch to it:
 
 ```bash
-git switch -c module-02
+git switch -c personal
 ```
 
-We'll cover branches in more depth in Module 4. For now: new work, new branch.
+This is where you'll save your notes for the rest of the class. We'll cover branches in more depth in Module 4.
 
 ---
 
@@ -567,7 +567,7 @@ def classify_numbers(numbers):
 
 ## Save Your Work
 
-Check that you're on your `module-02` branch (marked with a `*`), then commit:
+Check that you're on your `personal` branch (marked with a `*`), then commit:
 
 ```bash
 git branch
