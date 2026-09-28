@@ -59,17 +59,85 @@ September 30, 2026
 Content covered:
 
 1. Pandas, continued
+   1. Selecting Data with `.iloc` and `.loc`
+   2. Group-apply-combine
+   3. Renaming Columns
 2. Intro to Seaborn
 
 ---
 
 By the end of this class, you will be able to:
 
+- Select rows and columns by position and label with `.iloc` and `.loc`
+- Use group-apply-combine to summarize data by category
+- Rename columns in a DataFrame
 - Produce a basic statistical plot in Seaborn
 
 ---
 
 ## <!-- fit -->1. Pandas, continued
+
+---
+
+<style scoped>section { font-size: 26px; }</style>
+
+## Selecting Data: `.iloc`
+
+If you would like to return a subset of your dataset, you can do so by using the `.iloc` indexer
+
+```python
+df.iloc[:100]
+```
+
+This will return the first 100 rows subset of your DataFrame.
+
+This uses the DataFrame index to select the rows of interest. The default index will be a `range(len(df))`. There are other possible types of indices but for now, we will just consider this one.
+
+---
+
+## Selecting Data: `.iloc`, cont.
+
+You can also use it to return a subset of the columns too using their index.
+
+```python
+df.iloc[:100, :2]
+```
+
+`.iloc` uses numeric indexers. This means you cannot use the column names to subset your DataFrame with `.iloc`.
+
+---
+
+## Selecting Data: `.loc`
+
+You can also index your DataFrame using the indexer, `.loc`.
+This indexer uses the row names and column names for indexing.
+
+By default, the row names are the same as the index.
+
+```python
+df.loc[:100]
+```
+
+Unlike `.iloc`, `.loc` includes the end of the slice, so this returns 101 rows.
+
+---
+
+## Selecting Data: `.loc`, cont.
+
+This comes into play when you want to include columns in your indexer.
+
+```python
+df.loc[:100, ['continent', 'country']]
+```
+
+---
+
+## Practice (5 min)
+
+Let's work on these questions:
+
+1. Select the first 5 rows of the `country` and `continent` columns, once with `.iloc` and once with `.loc`.
+2. Select rows 10 through 20 with `df.iloc[10:20]` and with `df.loc[10:20]`. Why is the number of rows different?
 
 ---
 

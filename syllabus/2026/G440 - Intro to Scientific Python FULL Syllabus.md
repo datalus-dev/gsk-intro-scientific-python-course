@@ -202,22 +202,26 @@ This class starts with logging in to GitHub from the terminal with the GitHub CL
 #### Module 5: Intro to Pandas
 September 28, 2026
 
-This class introduces objects and classes, then Pandas, a dataframe library used to load and manipulate data.
+This class starts with keeping your `personal` branch up to date with `git rebase`. We will then introduce objects and classes, then Pandas, a dataframe library used to load and manipulate data.
 
 **By the end of this class, you will be able to:**
 
+- Update `main` with `git pull upstream main` and rebase your `personal` branch onto it with `git rebase`
 - Describe what an object/class is
 - Create and inspect a pandas DataFrame
 - Load external data into a DataFrame
+- Select columns and filter rows in a DataFrame
 - Compute summary statistics on a DataFrame
-- Use group-apply-combine to summarize data by category
 
-1. Objects/Classes
-2. Intro to Pandas
+1. Keeping your branch up to date with git
+   1. `git pull upstream main` on `main`
+   2. `git rebase` on `personal`
+2. Objects/Classes
+3. Intro to Pandas
    1. Dataframes
    2. Loading Data
-   3. Summary Statistics
-   4. Group-apply-combine
+   3. Selecting Data
+   4. Summary Statistics
 
 #### Module 6: Pandas, continued, and Intro to Seaborn
 September 30, 2026
@@ -226,9 +230,15 @@ This class covers more hands-on uses of Pandas. We will then use Seaborn, a high
 
 **By the end of this class, you will be able to:**
 
+- Select rows and columns by position and label with `.iloc` and `.loc`
+- Use group-apply-combine to summarize data by category
+- Rename columns in a DataFrame
 - Produce a basic statistical plot in Seaborn
 
 1. Pandas, continued
+   1. Selecting Data with `.iloc` and `.loc`
+   2. Group-apply-combine
+   3. Renaming Columns
 2. Intro to Seaborn
 
 ---
