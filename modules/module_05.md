@@ -298,6 +298,8 @@ A Series can be a collection of strings, a collection of floats, a collection of
 
 ---
 
+<style scoped>section { font-size: 26px; }</style>
+
 ## Selecting a Column
 
 You can index the contents of a DataFrame in the same way we indexed values from an array.
@@ -341,22 +343,31 @@ Let's work on these questions:
 You can also use Pandas to load data from files.
 
 ```python
-df = pd.read_csv('../data/gapminder.tsv', sep='\t')
+df = pd.read_csv('gapminder.tsv', sep='\t')
 ```
 
 `sep` refers to the separator. For this file, the columns are delimited using tabs.
 
 ---
 
+<style scoped>section { font-size: 22px; }</style>
+
 ## Loading Data, cont.
 
-Notice that you can import files using relative paths. `..` means "go up one folder", from `notebooks/` to the course repo.
+Notice that you can import files using relative paths. `gapminder.tsv` is saved next to today's notebook, so its file name is enough.
+
+The course repo also keeps a copy in `data/`. `..` means "go up one folder", from `notebooks/` to the course repo, so this works too:
+
+```python
+df = pd.read_csv('../data/gapminder.tsv', sep='\t')
+```
 
 ```bash
 gsk-intro-scientific-python-course
 ├── data
 │   └── gapminder.tsv
 └── notebooks
+    ├── gapminder.tsv
     └── module_05.ipynb
 ```
 
@@ -444,6 +455,8 @@ Let's work on these questions:
 2. Select all rows from `2007` and save them as `df_2007`. From `df_2007`, select the countries with a `lifeExp` above 75.
 
 ---
+
+<style scoped>section { font-size: 26px; }</style>
 
 ## Summary Statistics
 
