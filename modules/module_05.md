@@ -343,7 +343,7 @@ Let's work on these questions:
 You can also use Pandas to load data from files.
 
 ```python
-df = pd.read_csv('gapminder.tsv', sep='\t')
+df = pd.read_csv('data/gapminder.tsv', sep='\t')
 ```
 
 `sep` refers to the separator. For this file, the columns are delimited using tabs.
@@ -354,20 +354,13 @@ df = pd.read_csv('gapminder.tsv', sep='\t')
 
 ## Loading Data, cont.
 
-Notice that you can import files using relative paths. `gapminder.tsv` is saved next to today's notebook, so its file name is enough.
-
-The course repo also keeps a copy in `data/`. `..` means "go up one folder", from `notebooks/` to the course repo, so this works too:
-
-```python
-df = pd.read_csv('../data/gapminder.tsv', sep='\t')
-```
+Notice that you can import files using relative paths. `data/gapminder.tsv` means "the `data` folder next to this notebook, then `gapminder.tsv` inside it."
 
 ```bash
 gsk-intro-scientific-python-course
-├── data
-│   └── gapminder.tsv
 └── notebooks
-    ├── gapminder.tsv
+    ├── data
+    │   └── gapminder.tsv
     └── module_05.ipynb
 ```
 
