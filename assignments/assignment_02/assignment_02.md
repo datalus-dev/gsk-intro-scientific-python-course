@@ -2,9 +2,9 @@
 
 Due Friday, October 2, 2026
 
-This assignment covers material from Modules 3 and 4: NumPy arrays, random numbers and simulations, Matplotlib, and saving your work with git. Do your work in a Jupyter Notebook, with Markdown cells describing what you're doing and why, and code cells showing your work.
+This assignment covers material from Modules 3 and 4: NumPy arrays, random numbers and simulations, Matplotlib, and saving your work with git. We'll use Jupyter Notebooks with Markdown cells describing what you're doing and why, and code cells showing your work.
 
-Do your work on your `personal` branch. First, bring it up to date with the course repo:
+Let's work on our `personal` branch. First, bring it up to date with the course repo:
 
 ```bash
 git switch main
@@ -13,7 +13,7 @@ git switch personal
 git rebase main
 ```
 
-Save your work on `personal` as you go with `git add` and `git commit`. You don't need to push it to submit; you'll upload your notebook in Section 5.
+Save your work on `personal` as you go with `git add` and `git commit`. 
 
 Throughout this assignment, we'll build up a simulation of a *random walk*: start at 0, and at each step, move either +1 or -1 with equal chance.
 
@@ -51,4 +51,4 @@ Using `fig, ax = plt.subplots()`:
 
 ## 5. Submit Your Work
 
-Download your notebook from Jupyter Lab and upload it to [https://mskeducation.mskcc.org/](https://mskeducation.mskcc.org/) by Friday, October 2 11:59PM.
+Download your notebook from Jupyter Lab and upload it to [https://mskeducation.mskcc.org/](https://mskeducation.mskcc.org/) by Friday, October 2nd 11:59PM.

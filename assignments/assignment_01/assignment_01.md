@@ -49,4 +49,4 @@ git commit -m "Complete Assignment 1"
 git log
 ```
 
-Then download your notebook from Jupyter Lab and upload it to [https://mskeducation.mskcc.org/](https://mskeducation.mskcc.org/) by September 21 11:59PM.
+Then download your notebook from Jupyter Lab and upload it to [https://mskeducation.mskcc.org/](https://mskeducation.mskcc.org/) by September 21st 11:59PM.
