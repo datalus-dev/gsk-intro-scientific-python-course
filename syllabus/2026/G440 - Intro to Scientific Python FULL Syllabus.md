@@ -31,7 +31,7 @@ The Policy can be found in the [Student and Faculty Handbook](https://www.sloank
 
 ### Generative AI and Agentic Programming Tools
 
-The first four weeks of this course are focused on building your foundational understanding of Python and git. It is crucial to your learning that you do this without the use of an agentic programming tool (e.g., Claude Code, GitHub Copilot, Cursor). We will have a class dedicated to using an agentic programming tool, but working effectively with one requires that you first understand the fundamentals of programming.
+The first three weeks of this course are focused on building your foundational understanding of Python and git. It is crucial to your learning that you do this without the use of an agentic programming tool (e.g., Claude Code, GitHub Copilot, Cursor). We will have a class dedicated to using an agentic programming tool, but working effectively with one requires that you first understand the fundamentals of programming.
 
 ## Getting Started
 
@@ -71,7 +71,7 @@ The course materials can be found at [gsk-intro-scientific-python-course](https:
 
 ## Homework
 
-There will be a weekly assignment to further emphasize the course materials. It will be assigned on Wednesdays and to be completed by the following Monday.
+There will be a weekly assignment to further emphasize the course materials. It will be assigned on Wednesdays and to be completed by the following Wednesday.
 
 ### Workgroups
 
@@ -94,7 +94,7 @@ Students will be arranged into working groups for projects and assignments as fo
 
 ### Week 1
 
-#### Module 1: Intro to Python
+#### Module 1: Introduction to Git and Python
 September 14, 2026
 
 This class is focused on getting comfortable with using the Terminal. We will be learning some git basics and using interactive Python through the command line.
@@ -103,7 +103,7 @@ This class is focused on getting comfortable with using the Terminal. We will be
 
 - Launch and navigate a command-line interface
 - Clone a git repository and navigate the resulting directory
-- Use the interactive Python shell
+- Use the interactive Python shell (`ipython`)
 - Identify and use core Python data types (`str`, `int`, `float`, `list`, `dict`)
 - Call built-in functions and import libraries
 
@@ -202,7 +202,7 @@ This class starts with logging in to GitHub from the terminal with the GitHub CL
 #### Module 5: Intro to Pandas
 September 28, 2026
 
-This class starts with keeping your `personal` branch up to date with `git rebase`. We will then introduce objects and classes, then Pandas, a dataframe library used to load and manipulate data.
+This class starts with a small extra git lesson: keeping your `personal` branch up to date with `git rebase`. We will then introduce objects and classes, then Pandas, a dataframe library used to load and manipulate data.
 
 **By the end of this class, you will be able to:**
 

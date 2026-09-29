@@ -1,5 +1,5 @@
 ---
-title: Module 01: Introduction to Python and Git
+title: Module 01: Introduction to Git and Python
 marp: true
 html: true
 theme: gaia
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
-# Module 01: Introduction to Python and Git
+# Module 01: Introduction to Git and Python
 
 September 14, 2026
 
@@ -166,7 +166,7 @@ Contact: [brookst3@mskcc.org](mailto:brookst3@mskcc.org)
 ## Anatomy of the Class
 
 - The first hour is lecture and active learning, woven together
-- The last 30 minutes is an in-class problem set, worked on in groups
+- The last 15 minutes is an in-class problem set, worked on in groups
 
 Programming is a team sport. Even at companies, if someone is writing, then someone is reviewing.
 
@@ -196,13 +196,13 @@ that you first understand the fundamentals of programming.
 
 | Week | Modules | Topics |
 |---|---|---|
-| 1 | 1-2 | Intro to Python; Notebooks, Control Flow, Functions |
-| 2 | 3-4 | NumPy; Matplotlib & Seaborn |
-| 3 | 5-6 | Pandas |
+| 1 | 1-2 | Intro to Git and Python; Notebooks, Control Flow, Functions |
+| 2 | 3-4 | NumPy; Matplotlib |
+| 3 | 5-6 | Pandas; Pandas & Seaborn |
 | 4 | 7-8 | SciPy, statsmodels & scikit-learn; Agentic Programming |
 | 5 | 9-10 | Advanced Topic; Final Project Presentation |
 
-A weekly assignment is given each Wednesday, due the following Monday.
+A weekly assignment is given each Wednesday, due the following Wednesday.
 
 ---
 
@@ -981,13 +981,15 @@ math.pi
 
 ---
 
-## <!-- fit --> Exercise (10-15 min)
+## <!-- fit --> Practice (10 min)
 
 ---
 
 ## In Groups...
 
 <style scoped>section { font-size: 24px; }</style>
+
+Let's work on these questions:
 
 1. Assign your name, age, and favorite number to three variables of different types (`str`, `int`, `float`)
 2. Use `type()` to confirm each one

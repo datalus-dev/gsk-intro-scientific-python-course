@@ -72,6 +72,7 @@ Content covered:
 3. Control Flow
 4. Built-in Functions
 5. Functions
+6. Bringing it all together
 
 ---
 
@@ -213,9 +214,9 @@ Order matters: cells run in the order *you* run them, not top to bottom automati
 
 ---
 
-## Try it live
+## Open Today's Notebook
 
-We'll use this notebook, `module_02.ipynb` for the rest of class.
+We'll use this notebook, `module_02.ipynb`, for the rest of class.
 
 Shortcuts you'll want:
 
@@ -225,7 +226,7 @@ Shortcuts you'll want:
 
 ---
 
-## Try it live, cont.
+## Try it live
 
 <iframe
   src="https://datalus-dev.github.io/gsk-intro-scientific-python-course/jupyterlite/notebooks/index.html?path=module_02.ipynb"
@@ -242,16 +243,21 @@ This is how you'll document your homework and final project notebooks — narrat
 
 ---
 
+<style scoped>section { font-size: 26px; }</style>
+
 ## Running Notebooks Locally
 
-For the lectures, I'm running JupyterLite so I can embed Python into my slides. It's great for demos but we'll setting things up locally. For your own machine:
+For the lectures, I'm running JupyterLite so I can embed Python into my slides. It's great for demos but we'll be setting things up locally. For your own machine:
 
 ```bash
+cd ~/workspace/gsk-intro-scientific-python-course
 conda activate gsk
 jupyter lab
 ```
 
 This opens the full Jupyter Lab interface, backed by your actual conda environment (not the browser sandbox).
+
+Open `notebooks/module_02.ipynb` from the file browser. This is the copy you'll save with git.
 
 ---
 
@@ -336,7 +342,11 @@ else:
 
 ---
 
-## Exercise
+<style scoped>section { font-size: 26px; }</style>
+
+## Practice (10 min)
+
+Let's work on these questions:
 
 - Create a dictionary
 - Write a few different if-elif-else statements:
@@ -463,7 +473,9 @@ print?
 
 ---
 
-## Exercise
+## Practice (5 min)
+
+Let's work on these questions:
 
 Spend some time exploring the different built-in functions in Python.
 
@@ -536,7 +548,9 @@ message
 
 ---
 
-## Exercise
+## Practice (15 min)
+
+Let's work on these questions:
 
 1. Create a function that takes in a list and returns a dictionary where the keys are indexes.
 2. Create a function that takes a list, creates a reversed copy of it, and returns a list of tuples pairing both lists together.
@@ -570,8 +584,9 @@ def classify_numbers(numbers):
 Check that you're on your `personal` branch (marked with a `*`), then commit:
 
 ```bash
+cd ~/workspace/gsk-intro-scientific-python-course
 git branch
-git add module_02.ipynb
+git add notebooks/module_02.ipynb
 git commit -m "Complete Module 02 exercises"
 git log
 ```

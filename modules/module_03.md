@@ -95,9 +95,11 @@ git pull upstream main
 
 This fetches the latest commits from `upstream` and merges them into your current branch.
 
-This works smoothly as long as you haven't committed your own work on `main`. In Module 4, we'll keep our work on branches instead.
+This works smoothly as long as you haven't committed your own work on `main`. That's why we keep our own work on the `personal` branch we created in Module 2.
 
 ---
+
+<style scoped>section { font-size: 24px; }</style>
 
 ## Reading a `git diff`
 
@@ -155,6 +157,8 @@ jupyter lab
 In Jupyter Lab, open `notebooks/module_03.ipynb`. It has today's code and a cell for each practice question.
 
 ---
+
+<style scoped>section { font-size: 24px; }</style>
 
 ## Markdown Cells
 
@@ -319,6 +323,8 @@ rolls = rng.integers(1, 7, size=10_000)
 `rolls == 6` gives an array of `True`/`False`. `True` counts as 1 and `False` as 0, so the mean is the proportion of rolls that were a 6.
 
 ---
+
+<style scoped>section { font-size: 24px; }</style>
 
 ## Practice (5 min)
 

@@ -87,7 +87,11 @@ By the end of this class, you will be able to:
 
 ---
 
+<style scoped>section { font-size: 24px; }</style>
+
 ## Updating `main`
+
+We're adding a small extra git lesson today: keeping your `personal` branch up to date with the course.
 
 Recall from Module 4: `main` only holds what's in the course repo, and your own work goes on a branch.
 
