@@ -1,16 +1,19 @@
 # Assignment 2
 
-Due September 28, 2026
+Due Friday, October 2, 2026
 
-This assignment covers material from Modules 3 and 4: NumPy arrays, random numbers and simulations, Matplotlib, and pushing your work with git. Do your work in a Jupyter Notebook, with Markdown cells describing what you're doing and why, and code cells showing your work.
+This assignment covers material from Modules 3 and 4: NumPy arrays, random numbers and simulations, Matplotlib, and saving your work with git. Do your work in a Jupyter Notebook, with Markdown cells describing what you're doing and why, and code cells showing your work.
 
-Before you start, make a branch for this assignment from an up-to-date `main`:
+Do your work on your `personal` branch. First, bring it up to date with the course repo:
 
 ```bash
 git switch main
 git pull upstream main
-git switch -c assignment-02
+git switch personal
+git rebase main
 ```
+
+Save your work on `personal` as you go with `git add` and `git commit`. You don't need to push it to submit; you'll upload your notebook in Section 5.
 
 Throughout this assignment, we'll build up a simulation of a *random walk*: start at 0, and at each step, move either +1 or -1 with equal chance.
 
@@ -46,16 +49,6 @@ Using `fig, ax = plt.subplots()`:
 - Add a title to each subplot and to the figure with `fig.suptitle()`
 - Save your figure as `random_walks.png` with `fig.savefig()`
 
-## 5. Save and Push Your Work
+## 5. Submit Your Work
 
-On your `assignment-02` branch, stage, commit, and push your notebook and figures:
-
-```bash
-git add <your_notebook>.ipynb random_walks.png
-git commit -m "Complete Assignment 2"
-git push origin assignment-02
-```
-
-If you haven't pushed Assignment 1 yet, push it too with `git push origin assignment-01`.
-
-Go to your fork on GitHub and confirm that the `assignment-01` and `assignment-02` branches are there, with your notebooks and figures. Your submission is what is on your fork's `assignment-02` branch by the due date.
+Download your notebook from Jupyter Lab and upload it to [https://mskeducation.mskcc.org/](https://mskeducation.mskcc.org/) by Friday, October 2 11:59PM.

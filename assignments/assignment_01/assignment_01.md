@@ -14,7 +14,7 @@ Find a Python library relevant to your own research (something you don't already
 
 In a Markdown cell in your notebook, describe the library — its name, its GitHub URL, and why it's relevant to your research — and include the commands you used to fork and clone it.
 
-You don't need to push anything back to GitHub yet — local commits are enough for now. We'll cover pushing your work in Module 4.
+You don't need to push anything back to GitHub. You'll upload your notebook when you're done, as described in (6).
 
 ## 2. Data Types
 
@@ -38,13 +38,15 @@ You don't need to push anything back to GitHub yet — local commits are enough 
 - Define a function that takes an argument and uses control flow inside it (an `if`/`else` or a `for` loop)
 - Call your function and show the result
 
-## 6. Save Your Work
+## 6. Save and Submit Your Work
 
-In your cloned fork, keep `main` in sync with the course repo and do your work on its own branch. Create the branch before you commit:
+In your cloned fork, keep `main` in sync with the course repo and do your work on your `personal` branch. Switch to it before you commit:
 
 ```bash
-git switch -c assignment-01
+git switch personal
 git add <your_notebook>.ipynb
 git commit -m "Complete Assignment 1"
 git log
 ```
+
+Then download your notebook from Jupyter Lab and upload it to [https://mskeducation.mskcc.org/](https://mskeducation.mskcc.org/) by September 21 11:59PM.
