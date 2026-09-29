@@ -174,8 +174,8 @@ You'll also see `git checkout -b new_branch` in older tutorials. It does the sam
 From now on, `main` only holds what's in the course repo. Your own work goes on a branch.
 
 - `main`: updated only with `git pull upstream main`
-- `assignment-01`, `assignment-02`, ...: one branch per assignment
-- `personal`: your in-class notes and exercises
+- `personal`: your in-class notes, exercises, and assignments
+- `yearbook_firstname_lastname`: your yearbook entry, later in class
 
 If you commit your work on `main`, it no longer matches the course repo, and `git pull` will refuse to update it.
 
@@ -183,16 +183,17 @@ If you commit your work on `main`, it no longer matches the course repo, and `gi
 
 ## Moving Your Work off `main`
 
-If you committed Assignment 1 on `main`, let's move it onto its own branch:
+If you committed Assignment 1 on `main`, let's move it onto `personal`:
 
 ```bash
 git fetch upstream
-git switch -c assignment-01
+git switch personal
+git rebase main
 git branch -f main upstream/main
 git switch main
 ```
 
-Your commits are safe on `assignment-01`. When you switch back to `main`, your notebook disappears from the folder. It's still on `assignment-01`: `git switch assignment-01` brings it back.
+Your commits are safe on `personal`. When you switch back to `main`, your notebook disappears from the folder. It's still on `personal`: `git switch personal` brings it back.
 
 ---
 
@@ -213,12 +214,12 @@ git pull upstream main
 To send your local commits to your fork on GitHub:
 
 ```bash
-git push origin assignment-01
+git push origin personal
 ```
 
-This pushes the commits on your local `assignment-01` branch to a branch of the same name on `origin`, your fork.
+This pushes the commits on your local `personal` branch to a branch of the same name on `origin`, your fork.
 
-Go to your fork on GitHub and choose `assignment-01` from the branch dropdown. Your commits and your Assignment 1 notebook are there now.
+Go to your fork on GitHub and choose `personal` from the branch dropdown. Your commits and your notebooks are there now.
 
 ---
 
@@ -226,9 +227,9 @@ Go to your fork on GitHub and choose `assignment-01` from the branch dropdown. Y
 
 Let's work on these questions:
 
-1. Run `git branch` to see your branches, and `git log assignment-01` to see your Assignment 1 commits.
-2. Push them to your fork with `git push origin assignment-01`.
-3. Find your commits on GitHub under the `assignment-01` branch of your fork.
+1. Run `git branch` to see your branches, and `git log personal` to see your commits.
+2. Push them to your fork with `git push origin personal`.
+3. Find your commits on GitHub under the `personal` branch of your fork.
 
 ---
 <style scoped>section { font-size: 26px; }</style>
@@ -247,6 +248,8 @@ GitHub doesn't know our remote names, so you won't see `origin` or `upstream` th
 The maintainers can review, comment, and merge it.
 
 ---
+
+<style scoped>section { font-size: 24px; }</style>
 
 ## A Minimal GitHub Workflow
 
@@ -349,7 +352,7 @@ Matplotlib is the main plotting library in Python.
 
 It was used to generate the first image of a black hole! <p class="emoji"> 🕳️🤯</p>
 
-<img src="https://numpy.org/images/content_images/cs/blackhole.jpg" width="600">
+<img src="https://numpy.org/images/content_images/cs/blackhole.jpg" width="440">
 
 ---
 
@@ -464,6 +467,8 @@ data1, data2, data3, data4 = rng.standard_normal((4, 100))
 Passing `(4, 100)` as the size gives a 4 × 100 array, and unpacking it gives us one row per variable.
 
 ---
+
+<style scoped>section { font-size: 24px; }</style>
 
 ## Styling
 
