@@ -57,10 +57,18 @@ jobs:
             fi
           done
 
+      - name: Build module PDFs
+        run: |
+          # Chrome (used by Marp for PDF export) can't start its sandbox under
+          # the runner's default AppArmor policy; harmless if the setting is absent.
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+          node site/build-pdfs.js _site/modules/pdf
+
       - name: Copy slide assets
         run: |
           mkdir -p _site/syllabus/2026
           cp syllabus/2026/instructor-teon-photo.png syllabus/2026/instructor-tejiri-photo.png _site/syllabus/2026/
+          cp -r modules/images _site/modules/images
 
       - name: Generate landing page
         run: node site/generate-index.js _site/index.html

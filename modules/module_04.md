@@ -31,6 +31,11 @@ footer: Intro to Scientific Python
     .copy-btn:hover {
         background: rgba(255, 255, 255, 0.3);
     }
+    @media print {
+        .copy-btn, iframe {
+            display: none;
+        }
+    }
 </style>
 
 <script>
@@ -406,7 +411,7 @@ img[alt~="center"] {
 }
 </style>
 
-![w:640 center](./images/anatomy.png)
+![w:640 center](../images/anatomy.png)
 
 ---
 

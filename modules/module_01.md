@@ -31,6 +31,11 @@ footer: Intro to Scientific Python
     .copy-btn:hover {
         background: rgba(255, 255, 255, 0.3);
     }
+    @media print {
+        .copy-btn, iframe {
+            display: none;
+        }
+    }
 </style>
 
 <script>

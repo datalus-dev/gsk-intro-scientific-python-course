@@ -42,10 +42,11 @@ All build steps are available as `npm run` scripts (see `package.json`), and are
 |---|---|---|
 | `npm run slides -- <args>` | Runs `marp-cli` directly, for building or previewing one module's slides | `@marp-team/marp-cli` (npm) |
 | `npm run build:slides` | Builds HTML for every module that's ready for this year (has an active, uncommented `title:` in its frontmatter — see below) | `@marp-team/marp-cli` (npm) |
+| `npm run build:pdf` | Builds a PDF of every ready module into `modules/pdf/`, using the same "ready" signal. Uses Chrome, which Marp finds automatically | `@marp-team/marp-cli` (npm) and Chrome |
 | `npm run build:notebooks` | Builds the JupyterLite site from `notebooks/`, including the live lecture-along notebooks embedded in the slides | `jupyterlite-core`, `jupyterlite-pyodide-kernel`, `jupyter-server` (pip) |
 | `npm run build:assignments` | Renders every `assignments/*/*.md` to a PDF alongside it | `pandoc` + a LaTeX engine (e.g. `xelatex`) |
 | `npm run build:site` | Generates `_site/index.html`, the course landing page grid, from whichever modules are ready | none beyond Node |
-| `npm run build` | Runs slides, notebooks, and site generation together (the same pipeline CI runs, minus `build:assignments` since that's a local/instructor-only step) | all of the above except pandoc |
+| `npm run build` | Runs slides, PDFs, notebooks, and site generation together (the same pipeline CI runs, minus `build:assignments` since that's a local/instructor-only step) | all of the above except pandoc |
 
 A module counts as "ready" once its frontmatter's `title:` line is uncommented — that's the same signal `build:slides` and `build:site` use to decide what to build and what to show as "Coming soon" on the landing page. Rewriting a module for this year is as simple as uncommenting that line.
 

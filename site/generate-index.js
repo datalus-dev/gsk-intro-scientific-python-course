@@ -49,7 +49,7 @@ const cards = SCHEDULE.map((scheduledDate, i) => {
   const ready = readModule(num);
 
   if (ready) {
-    return `    <a class="card" href="modules/html/module_${num}.html">
+    return `    <a class="card" href="modules/html/module_${num}.html" data-html="modules/html/module_${num}.html" data-pdf="modules/pdf/module_${num}.pdf">
       <div class="eyebrow">Module ${num}</div>
       <div class="title">${ready.title}</div>
       <div class="date">${ready.date || scheduledDate}</div>
