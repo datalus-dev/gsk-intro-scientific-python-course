@@ -353,6 +353,8 @@ Let's work on these questions:
 
 ---
 
+<style scoped>section { font-size: 26px; }</style>
+
 ## Renaming Columns
 
 - .rename()
@@ -361,9 +363,7 @@ Let's work on these questions:
 .rename(columns = {"old_name": "new_name"})
 ```
 
----
-
-## Renaming Columns, cont.
+For example:
 
 ```python
 df = df.rename(
