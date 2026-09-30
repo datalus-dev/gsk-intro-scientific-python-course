@@ -191,7 +191,7 @@ Here's this course repo's own [`.gitignore`](../.gitignore):
 cat .gitignore
 ```
 
-Why do you think `_build/`, `.venv`, and `*.pdf` are ignored here?
+Why do you think `_build/`, `.ipynb_checkpoints`, and `*.pdf` are ignored here?
 
 ---
 

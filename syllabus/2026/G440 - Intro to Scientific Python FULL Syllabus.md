@@ -71,7 +71,7 @@ The course materials can be found at [gsk-intro-scientific-python-course](https:
 
 ## Homework
 
-There will be a weekly assignment to further emphasize the course materials. It will be assigned on Wednesdays and to be completed by the following Wednesday.
+There will be a weekly assignment to further emphasize the course materials. It will be assigned on Wednesdays and to be completed by the following Friday.
 
 ### Workgroups
 
