@@ -79,6 +79,8 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 1rem;
     font-size: 0.82rem;
     color: var(--text-muted);
@@ -136,6 +138,16 @@
     text-decoration: none;
     color: var(--text);
     transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  a.card.unavailable {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  a.card.unavailable:hover {
+    border-color: var(--border);
+    transform: none;
   }
 
   a.card:hover {
@@ -207,10 +219,12 @@
     <h1>Intro to Scientific Python</h1>
     <p class="subtitle">G440 &middot; GSK &middot; Fall 2026</p>
     <div class="format-toggle">
-      <span>Slides</span>
-      <div class="segments" role="group" aria-label="Slide format">
+      <span>Open as</span>
+      <div class="segments" role="group" aria-label="Format">
         <button type="button" data-format="html" aria-pressed="true">HTML</button>
         <button type="button" data-format="pdf" aria-pressed="false">PDF</button>
+        <button type="button" data-format="jupyterlite" aria-pressed="false">JupyterLite</button>
+        <button type="button" data-format="ipynb" aria-pressed="false">ipynb</button>
       </div>
     </div>
   </header>
@@ -227,12 +241,33 @@
 
 <script>
   (function () {
+    var FORMATS = ['html', 'pdf', 'jupyterlite', 'ipynb'];
     var buttons = document.querySelectorAll('.format-toggle button');
     var cards = document.querySelectorAll('a.card[data-html]');
 
     function apply(format) {
       cards.forEach(function (card) {
-        card.setAttribute('href', card.dataset[format]);
+        var href = card.dataset[format];
+        card.classList.toggle('unavailable', !href);
+        if (href) {
+          card.setAttribute('href', href);
+          card.removeAttribute('aria-disabled');
+        } else {
+          card.removeAttribute('href');
+          card.setAttribute('aria-disabled', 'true');
+        }
+        if (format === 'ipynb') {
+          card.setAttribute('download', '');
+        } else {
+          card.removeAttribute('download');
+        }
+        if (format === 'jupyterlite') {
+          card.setAttribute('target', '_blank');
+          card.setAttribute('rel', 'noopener');
+        } else {
+          card.removeAttribute('target');
+          card.removeAttribute('rel');
+        }
       });
       buttons.forEach(function (button) {
         button.setAttribute('aria-pressed', String(button.dataset.format === format));
@@ -241,8 +276,8 @@
 
     var saved = 'html';
     try {
-      var stored = localStorage.getItem('slide-format');
-      if (stored === 'pdf' || stored === 'html') saved = stored;
+      var stored = localStorage.getItem('format');
+      if (FORMATS.indexOf(stored) !== -1) saved = stored;
     } catch (e) {}
     apply(saved);
 
@@ -250,7 +285,7 @@
       button.addEventListener('click', function () {
         apply(button.dataset.format);
         try {
-          localStorage.setItem('slide-format', button.dataset.format);
+          localStorage.setItem('format', button.dataset.format);
         } catch (e) {}
       });
     });

@@ -8,6 +8,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const modulesDir = path.join(root, 'modules');
+const notebooksDir = path.join(root, 'notebooks');
 const templatePath = path.join(root, 'site', 'index.template.html');
 const outPath = process.argv[2] || path.join(root, '_site', 'index.html');
 
@@ -49,7 +50,10 @@ const cards = SCHEDULE.map((scheduledDate, i) => {
   const ready = readModule(num);
 
   if (ready) {
-    return `    <a class="card" href="modules/html/module_${num}.html" data-html="modules/html/module_${num}.html" data-pdf="modules/pdf/module_${num}.pdf">
+    const notebookAttrs = fs.existsSync(path.join(notebooksDir, `module_${num}.ipynb`))
+      ? ` data-jupyterlite="jupyterlite/lab/index.html?path=module_${num}.ipynb" data-ipynb="notebooks/module_${num}.ipynb"`
+      : '';
+    return `    <a class="card" href="modules/html/module_${num}.html" data-html="modules/html/module_${num}.html" data-pdf="modules/pdf/module_${num}.pdf"${notebookAttrs}>
       <div class="eyebrow">Module ${num}</div>
       <div class="title">${ready.title}</div>
       <div class="date">${ready.date || scheduledDate}</div>
