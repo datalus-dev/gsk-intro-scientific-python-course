@@ -328,10 +328,19 @@ Add this to `module_02.ipynb`:
 
 ```python
 x = 7
+if x < 0:
+    print("negative")
+elif x == 0:
+    print("zero")
+else:
+    print("positive")
+```
+
+`%` gives the remainder after division, so we can use it to check for even and odd numbers:
+
+```python
 if x % 2 == 0:
     print("even")
-elif x < 0:
-    print("negative")
 else:
     print("odd")
 ```
@@ -349,17 +358,52 @@ else:
 
 <style scoped>section { font-size: 26px; }</style>
 
-## Practice (10 min)
+## Practice (5 min)
 
 Let's work on these questions:
 
 - Create a dictionary
-- Write a few different if-elif-else statements:
-  - Check whether a key is in the dictionary
-    - If a key does not exist, add an entry to the dictionary
-  - If a key does exist, check if it is a list
-    - If it's not a list, convert it to a list
-    - If it's a list, append a value to it
+- Write an `if` / `elif` / `else` statement that checks a key and prints what it finds:
+  - `if` the key is not in the dictionary, print that it's missing
+  - `elif` the key's value is a list, print that it's a list
+  - `else` the value is something other than a list, print that
+
+---
+
+## Practice (5 min), Walkthrough
+
+Start with a dictionary and a key to look for:
+
+```python
+my_dict = {"pet": "cat", "animals": ["cats", "dogs", "birds"]}
+key = "pet"
+```
+
+Step 1: is the key missing?
+
+```python
+if key not in my_dict:
+    print(f"'{key}' is not in the dictionary")
+```
+
+---
+
+## Practice (5 min), Walkthrough, cont.
+
+Step 2: if it's there, is its value a list? `elif` checks next, and `else` catches the rest:
+
+```python
+if key not in my_dict:
+    print(f"'{key}' is not in the dictionary")
+elif isinstance(my_dict[key], list):
+    print(f"'{key}' is in the dictionary and its value is a list")
+else:
+    print(f"'{key}' is in the dictionary, but its value is not a list")
+```
+
+Try it with `key = "color"`, `"pet"`, and `"animals"`.
+
+Q: What happens if we check `isinstance(my_dict[key], list)` first?
 
 ---
 
