@@ -71,6 +71,16 @@ const cards = SCHEDULE.map((scheduledDate, i) => {
     </div>`;
 });
 
+// Course-wide reference, shown below the modules. It follows the HTML/PDF
+// toggle; with no notebook versions it greys out for the other two formats.
+if (fs.existsSync(path.join(root, 'cheatsheet', 'cheatsheet.md'))) {
+  cards.push(`    <a class="card wide" href="cheatsheet/cheatsheet.html" data-html="cheatsheet/cheatsheet.html" data-pdf="cheatsheet/cheatsheet.pdf">
+      <div class="eyebrow">Reference</div>
+      <div class="title">Cheatsheet</div>
+      <div class="date">Command line, git, and Python, updated as the course goes</div>
+    </a>`);
+}
+
 const template = fs.readFileSync(templatePath, 'utf8');
 const output = template.replace('<!-- MODULES -->', cards.join('\n'));
 

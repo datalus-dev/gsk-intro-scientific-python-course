@@ -7,6 +7,7 @@ on:
       - jupyter_lite_config.json
       - notebooks/**
       - modules/**
+      - cheatsheet/**
       - site/**
       - package.json
       - package-lock.json
@@ -63,6 +64,9 @@ jobs:
           # the runner's default AppArmor policy; harmless if the setting is absent.
           sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
           node site/build-pdfs.js _site/modules/pdf
+
+      - name: Build cheatsheet
+        run: node site/build-cheatsheet.js _site/cheatsheet
 
       - name: Copy slide assets
         run: |

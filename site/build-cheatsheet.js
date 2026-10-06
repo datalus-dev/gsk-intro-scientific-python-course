@@ -10,7 +10,7 @@
 //   > text                              -> small grey note under a card
 // In ```python and ```bash blocks, a trailing `# comment` and `[Tab]` are greyed out.
 //
-// Usage: node site/build-cheatsheet.js [--no-pdf]
+// Usage: node site/build-cheatsheet.js [outDir] [--no-pdf]   (default outDir: cheatsheet/)
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
@@ -19,8 +19,10 @@ const MarkdownIt = require('markdown-it');
 const dir = path.resolve(__dirname, '..', 'cheatsheet');
 const mdPath = path.join(dir, 'cheatsheet.md');
 const cssPath = path.join(dir, 'cheatsheet.css');
-const htmlPath = path.join(dir, 'cheatsheet.html');
-const pdfPath = path.join(dir, 'cheatsheet.pdf');
+const outDir = path.resolve(process.argv.slice(2).find((a) => !a.startsWith('--')) || dir);
+const htmlPath = path.join(outDir, 'cheatsheet.html');
+const pdfPath = path.join(outDir, 'cheatsheet.pdf');
+fs.mkdirSync(outDir, { recursive: true });
 
 const md = new MarkdownIt({ html: false });
 const esc = md.utils.escapeHtml;
