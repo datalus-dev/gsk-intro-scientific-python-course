@@ -342,18 +342,6 @@ Let's work on these questions:
 
 ---
 
-## Cheatsheet
-
-| Question | Function |
-|---|---|
-| Linearly related? | `stats.pearsonr(x, y)` |
-| Related by rank? | `stats.spearmanr(x, y)` |
-| Do two groups differ in mean? | `stats.ttest_ind(a, b)` |
-
-https://docs.scipy.org/doc/scipy/reference/stats.html
-
----
-
 ## Practice (10 min)
 
 Let's work on these questions:
