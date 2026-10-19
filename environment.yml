@@ -10,4 +10,5 @@ dependencies:
   - matplotlib
   - seaborn
   - statsmodels
+  - formulaic
   - scikit-learn
