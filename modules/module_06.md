@@ -80,6 +80,16 @@ By the end of this class, you will be able to:
 
 ---
 
+## Things We've Covered
+
+- Git: `fork`, branches, `git push`, `git rebase`
+- Python basics: strings, lists, dictionaries, loops, functions, classes
+- NumPy: `ndarray` and random number generators
+- Matplotlib: `fig, ax = plt.subplots()`
+- Pandas: DataFrames, Series, loading data, Boolean expressions, summary statistics
+
+---
+
 ## <!-- fit -->1. Pandas, continued
 
 ---
