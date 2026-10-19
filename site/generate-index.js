@@ -21,9 +21,9 @@ const SCHEDULE = [
   'September 28, 2026',
   'September 30, 2026',
   'October 5, 2026',
-  'October 7, 2026',
   'October 19, 2026',
   'October 21, 2026',
+  'October 26, 2026',
 ];
 
 const DATE_RE = /^(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, \d{4}$/m;

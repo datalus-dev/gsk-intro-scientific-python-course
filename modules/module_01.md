@@ -204,8 +204,8 @@ that you first understand the fundamentals of programming.
 | 1 | 1-2 | Intro to Git and Python; Notebooks, Control Flow, Functions |
 | 2 | 3-4 | NumPy; Matplotlib |
 | 3 | 5-6 | Pandas; Pandas & Seaborn |
-| 4 | 7-8 | SciPy, statsmodels & scikit-learn; Agentic Programming |
-| 5 | 9-10 | Advanced Topic; Final Project Presentation |
+| 4 | 7-8 | SciPy; statsmodels & scikit-learn |
+| 5 | 9-10 | Agentic Programming & Advanced Topic; Final Project Presentation |
 
 A weekly assignment is given each Wednesday, due the following Wednesday.
 

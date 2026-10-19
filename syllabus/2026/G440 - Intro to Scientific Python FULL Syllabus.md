@@ -245,34 +245,44 @@ This class covers more hands-on uses of Pandas. We will then use Seaborn, a high
 
 ### Week 4
 
-#### Module 7: Data Science in Practice
+#### Module 7: Intro to SciPy
 October 5, 2026
 
-This class covers basic statistics with SciPy, then introduces statsmodels and scikit-learn for data analysis and data modeling.
+This class introduces SciPy and its statistics tools. We will use the Gapminder data to measure the relationship between two variables with a correlation, and to compare two groups with a t-test.
 
 **By the end of this class, you will be able to:**
 
-- Run and interpret a correlation and a t-test with SciPy
-- Fit and interpret a statistical model with statsmodels
-- Train and evaluate a basic model with scikit-learn
+- Run and interpret a correlation with SciPy
+- Run and interpret a t-test with SciPy
 
 1. Intro to SciPy - Basic stats
    1. Correlation
    2. T-tests
-2. statsmodels
-3. scikit-learn
 
-#### Module 8: Agentic Programming
-October 7, 2026
+#### Module 8: Data Modeling with statsmodels
+October 19, 2026
 
-This class introduces agentic programming as a companion in data science. We will cover design, planning, and iteration.
+This class introduces statsmodels for data modeling. We will fit a regression, write models with formulas using formulaic, and fit a logistic regression to classify countries by their life expectancy.
+
+**By the end of this class, you will be able to:**
+
+- Fit and interpret a regression model with statsmodels
+- Build a model's inputs from a formula with formulaic
+- Fit and interpret a logistic regression model with statsmodels
+
+1. statsmodels
+   1. Regression
+   2. Formulas with formulaic
+   3. Logistic regression
 
 ---
 
 ### Week 5
 
-#### Module 9: Agentic Programming cont.; Advanced Topic
-October 19, 2026
+#### Module 9: Agentic Programming; Advanced Topic
+October 21, 2026
+
+This class introduces agentic programming as a companion in data science. We will cover design, planning, and iteration, as part of this course's advanced topic.
 
 #### Module 10: Final Project Presentation
-October 21, 2026
+October 26, 2026
