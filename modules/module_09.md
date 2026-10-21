@@ -1,5 +1,5 @@
 ---
-# title: Module 09: Machine Learning with scikit-learn and Agentic Programming
+title: Module 09: Machine Learning with scikit-learn and Agentic Programming
 marp: true
 html: true
 theme: gaia
