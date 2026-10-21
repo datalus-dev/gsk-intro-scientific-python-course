@@ -15,8 +15,9 @@ _build
 .ipynb_checkpoints
 .jupyter
 
-# Marp outputs
-modules/html/*.html
+# Build outputs (slides, cheatsheet)
+*.html
+!site/index.template.html
 *.pdf
 
 # Instructor answer keys (local only)

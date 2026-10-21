@@ -1,6 +1,6 @@
 # Intro to Scientific Python: Cheatsheet
 
-Modules 1–7 · Command line, git, Python, NumPy, Matplotlib, Pandas, Seaborn, SciPy
+Modules 1–9 · Command line, git, Python, NumPy, Matplotlib, Pandas, Seaborn, SciPy, statsmodels, scikit-learn, agents
 
 ## 1. Command line
 
@@ -645,3 +645,202 @@ stats.ttest_rel(y2007, y1952)    # paired
  (77.6 years) than in Africa (54.8 years),
  t = 12.6, p < 0.001."
 ```
+
+## 8. statsmodels
+
+### Formulas & `model_matrix`
+
+```python
+from formulaic import model_matrix
+
+y, X = model_matrix(
+    'life_expectancy ~ log_gdp', df_2007)
+X = model_matrix(
+    '~ log_gdp + C(continent)', df_2007)
+X = X.drop(columns='Intercept')
+```
+
+- `~` reads "is modeled by". It returns the outcome `y` and the design matrix `X`
+- Formulas add an `Intercept` column of 1s
+- With no outcome, you get just `X`
+- Drop `Intercept` before scikit-learn, which fits its own
+
+### Fit a regression (OLS)
+
+```python
+import statsmodels.api as sm
+from formulaic import model_matrix
+
+y, X = model_matrix(
+    'life_expectancy ~ log_gdp', df_2007)
+model = sm.OLS(y, X)
+results = model.fit()
+print(results.summary())
+```
+
+- `y` comes first: `sm.OLS(y, X)`
+
+### Formula shortcut
+
+```python
+import statsmodels.formula.api as smf
+
+ols_model = smf.ols(
+    'life_expectancy ~ log_gdp',
+    data=df_2007)
+results = ols_model.fit()
+results.params
+```
+
+> `smf.ols` takes the formula directly and adds the intercept for you.
+
+### Add predictors
+
+```python
+'life_expectancy ~ log_gdp + log_pop'
+'life_expectancy ~ log_gdp + C(continent)'
+```
+
+- `+` adds a predictor. `C()` marks a category, and is needed for numbers like `year`
+- A category becomes 0/1 dummy columns. The first, alphabetically (Africa), is the baseline
+
+### Read the OLS summary
+
+- `coef`: the slope. With `log_gdp`, each 10x in GDP per capita goes with 16.6 more years
+- `P>|t|`: the p-value of each coefficient
+- `[0.025 0.975]`: the 95% confidence interval
+- `R-squared`: the share of variation explained
+
+```python
+results.params
+results.rsquared
+```
+
+### Logistic regression
+
+```python
+y, X = model_matrix(
+    'high_life_exp ~ log_gdp', df_2007)
+model = sm.Logit(y, X)
+results = model.fit()
+results.predict(X)
+```
+
+- For a yes/no outcome. `coef` is in log-odds
+- `np.exp(coef)` is the odds ratio
+- `predict` gives a probability. Above 0.5 is a yes
+
+### Check the predictions
+
+```python
+actual = df_2007['high_life_exp']
+probs = results.predict(X)
+predicted = (probs > 0.5).astype(int)
+(predicted == actual).mean()
+pd.crosstab(actual, predicted)
+```
+
+> Rows are the true class, columns the predicted class. The off-diagonal counts are the mistakes.
+
+## 9. scikit-learn
+
+### Fit & predict
+
+```python
+from sklearn.linear_model import LinearRegression
+
+X = df_2007[['log_gdp']]
+y = df_2007['life_expectancy']
+model = LinearRegression()
+model.fit(X, y)
+model.predict(X)
+model.intercept_, model.coef_
+```
+
+> `X` is a DataFrame (double brackets), `y` a Series. Fit on all the data, it gives the same line as statsmodels.
+
+### Train & test split
+
+```python
+from sklearn.model_selection import train_test_split
+
+splits = train_test_split(
+    X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = splits
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+```
+
+- Learn on the train set, judge on the test set
+- `random_state` repeats the same split. `stratify=y` keeps class shares the same
+
+### Score a regression
+
+```python
+from sklearn.metrics import r2_score, mean_squared_error
+
+r2_score(y_test, predictions)
+mean_squared_error(
+    y_test, predictions) ** 0.5
+model.score(X_test, y_test)
+```
+
+> The square root of the mean squared error is the RMSE, in the units of `y`. With a small test set, R² changes with `random_state`.
+
+### Classification
+
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+clf = LogisticRegression()
+clf.fit(X_train, y_train)
+predictions = clf.predict(X_test)
+clf.predict_proba(X_test)
+accuracy_score(y_test, predictions)
+confusion_matrix(y_test, predictions)
+```
+
+- Rows are the true class, columns the predicted class
+- Accuracy misleads when the classes are lopsided
+
+### statsmodels vs scikit-learn
+
+| | statsmodels | scikit-learn |
+|---|---|---|
+| Goal | Explain | Predict |
+| Fit | `sm.OLS(y, X)` | `model.fit(X, y)` |
+| `.fit()` | Returns `results`. `model` is only the setup | Learns in place on `model` |
+| Input | `y, X` from a formula | The columns directly |
+| Intercept | A column in `X` | Fit automatically |
+| Judge it with | `.summary()` | Score on the test set |
+
+> `y` comes first in statsmodels, `X` first in scikit-learn. With scikit-learn, drop the `Intercept` column from `model_matrix`.
+
+## 10. Agentic programming
+
+### Working with an agent
+
+```bash
+cd gsk-intro-scientific-python-course
+claude
+```
+
+- Start it in your project folder, and approve each edit or command
+- Don't turn off the permission prompts
+- Keep private data in a folder outside the project
+
+### Plan first
+
+- Ask for a plan before any code. Read it, correct it, then say go
+- Limit the libraries: "Use only the packages in `environment.yml`"
+- Work in small steps. Put notes in a `CLAUDE.md`
+
+### Review what it wrote
+
+- Is the data split into train and test?
+- Is the score computed on the test set?
+- Is anything fit on the test data?
+- Is `X` a DataFrame and `y` a Series?
+- Is there one intercept, not two?
+- Do the numbers make sense? Run `r2_score` yourself
