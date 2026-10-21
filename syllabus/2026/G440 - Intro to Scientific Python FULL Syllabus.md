@@ -279,10 +279,22 @@ This class introduces statsmodels for data modeling. We will fit a regression, w
 
 ### Week 5
 
-#### Module 9: Agentic Programming; Advanced Topic
+#### Module 9: Machine Learning with scikit-learn; Agentic Programming
 October 21, 2026
 
-This class introduces agentic programming as a companion in data science. We will cover design, planning, and iteration, as part of this course's advanced topic.
+This class introduces scikit-learn for machine learning. We will train and evaluate a regression model, then a basic classification model, on data the models haven't seen.
+
+This class also introduces agentic programming as a companion in data science. We will cover design, planning, and iteration, as part of this course's advanced topic.
+
+**By the end of this class, you will be able to:**
+
+- Train and evaluate a regression model with scikit-learn
+- Train and evaluate a basic classification model with scikit-learn
+
+1. scikit-learn
+   1. Regression
+   2. Classification
+2. Agentic Programming
 
 #### Module 10: Final Project Presentation
 October 26, 2026
