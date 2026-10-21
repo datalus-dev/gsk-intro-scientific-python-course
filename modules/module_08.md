@@ -201,6 +201,8 @@ Formulas include an `Intercept` by default.
 
 ## Fitting OLS
 
+<style scoped>section { font-size: 24px; }</style>
+
 ```python
 model = sm.OLS(y, X)
 results = model.fit()
@@ -210,6 +212,15 @@ print(results.summary())
 `sm.OLS()` sets up the model, and `.fit()` finds the best line.
 
 statsmodels also has a shortcut, `smf.ols('life_expectancy ~ log_gdp', data=df_2007)` from `statsmodels.formula.api`, which takes the formula directly. You will see it in many tutorials.
+
+By convention, we import it as `smf`.
+
+```python
+import statsmodels.formula.api as smf
+
+model = smf.ols('life_expectancy ~ log_gdp', data=df_2007)
+results = model.fit()
+```
 
 ---
 
@@ -393,18 +404,6 @@ Let's work on these questions:
 1. Fit `high_life_exp ~ log_gdp + log_pop`. Is the `log_pop` coefficient significant?
 2. Make a column `africa` that is `1` for countries in Africa and `0` otherwise, and fit `africa ~ log_gdp`. Is the `log_gdp` coefficient positive or negative? What does that mean?
 3. Use `results.predict()` to find the probability of a high life expectancy for a country with a GDP per capita of $5,000. Hint: use `np.log10(5000)`.
-
----
-
-## Practice (10 min)
-
-<style scoped>section { font-size: 26px; }</style>
-
-Let's work on these questions:
-
-1. Fit a statsmodels OLS of `life_expectancy ~ log_gdp + C(continent)` on 1952. Does continent explain more or less than in 2007?
-2. Make `high_life_exp` for 1952, using the 1952 median, and fit `high_life_exp ~ log_gdp`. Is the `log_gdp` coefficient bigger or smaller than in 2007? What is the accuracy?
-3. In your own words: which model would you use to answer "how many more years of life expectancy?", and which for "is this country in the high group?"
 
 ---
 
