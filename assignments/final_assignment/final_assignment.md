@@ -82,7 +82,7 @@ df = pd.DataFrame(data)
 - Use `model_matrix()` from `formulaic` to build `y` and `X` from the formula `'quality ~ alcohol + volatile_acidity + sulphates'`
 - Fit it with `sm.OLS(y, X).fit()` and print the `summary()`
 - Fit a second model that adds two more measurements of your choice
-- In a Markdown cell, answer: explain what coefficient for `alcohol` represent and mean? Which predictors are significant? How much did the `R-squared` change when you added predictors?
+- In a Markdown cell, answer: what does the coefficient for `alcohol` represent and mean? Which predictors are significant? How much did the `R-squared` change when you added predictors?
 
 ## 8. Prediction with scikit-learn
 
